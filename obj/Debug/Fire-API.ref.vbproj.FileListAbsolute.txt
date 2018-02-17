@@ -1,0 +1,3 @@
+c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbprojResolveAssemblyReference.cache
+c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire_API.ref.Resources.resources
+c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbproj.GenerateResource.Cache
