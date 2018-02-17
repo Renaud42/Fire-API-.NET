@@ -1,0 +1,98 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Fire-API.ref
+</name>
+</assembly>
+<members>
+<member name="T:Fire_API.ref.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Fire_API.ref.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Fire_API.ref.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm">
+ <summary>
+ The algorithm of encryption used.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Fire_API_ref.EncryptionType">
+ <summary>
+ EncryptionType may be :
+ <para>- FileContent (only the content of the file)</para>
+ <para>- FileName (only the name of the file)</para>
+ <para>- Both (FileName + FileContent)</para>
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.AddTemp(Fire_API.ref.TempObject,System.Boolean)">
+ <summary>
+ Create a new temp folder/file.
+ </summary>
+ <param name="TempObj">The TempObject with the temp file/folder properties.</param>
+ <param name="generate">If setted to true, the temp file/golder will be automatically generated.</param>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.GenerateTemp(System.Int64)">
+ <summary>
+ Generate/regenerate the temp folder/file by.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.RemoveTemp(System.Int64)">
+ <summary>
+ Remove a temp folder/file by giving the identifier.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.RemoveAllTemp">
+ <summary>
+ Remove all temp folders/files.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.EditTempFile(System.Int64,System.String,System.Boolean,System.Text.Encoding)">
+ <summary>
+ Edit a temp file by giving the identifier and the content of the file.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.GetTempFileContent(System.Int64,System.Text.Encoding)">
+ <summary>
+ Get the content of a temp file.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.RenameTemp(System.Int64,Fire_API.ref.TempObject,System.String)">
+ <summary>
+ Rename a temp folder by giving the identifier.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.EncryptFile(System.Int64,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String)">
+ <summary>
+ Encrypt a temp file.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.DecryptFile(System.Int64,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String)">
+ <summary>
+ Decrypt a temp file.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.TempObject">
+ <summary>
+ This object is for define properties for a temp file/folder.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.TempObject.TempTypes">
+ <summary>
+ TempTypes may be :
+ <para>- Folder</para>
+ <para>- File</para>
+ </summary>
+</member>
+</members>
+</doc>

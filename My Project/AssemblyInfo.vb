@@ -9,13 +9,13 @@ Imports System.Runtime.InteropServices
 ' Vérifiez les valeurs des attributs de l'assembly
 
 <Assembly: AssemblyTitle("Fire-API.ref")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("Fire-Softwares API by Renaud42.")>
+<Assembly: AssemblyCompany("Fire-Softwares")>
 <Assembly: AssemblyProduct("Fire-API.ref")>
-<Assembly: AssemblyCopyright("Copyright ©  2018")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCopyright("Copyright © Fire-Softwares 2018")>
+<Assembly: AssemblyTrademark("Fire-Softwares")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
 <Assembly: Guid("f172bfc6-1b63-449b-a4e9-b109ecd75728")>

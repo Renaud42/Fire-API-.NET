@@ -1,10 +1,18 @@
-﻿Public Class TempObject
+﻿''' <summary>
+''' This object is for define properties for a temp file/folder.
+''' </summary>
+Public Class TempObject
     ' Variables
     Private tt As TempTypes
     Private tn As String
     Private td As String
 
-    ' Enumerate temp types
+    ' Enumerate TempObject types
+    ''' <summary>
+    ''' TempTypes may be :
+    ''' <para>- Folder</para>
+    ''' <para>- File</para>
+    ''' </summary>
     Public Enum TempTypes
         Folder
         File
