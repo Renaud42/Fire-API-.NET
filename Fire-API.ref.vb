@@ -201,6 +201,7 @@
 
                     ' Then re-rename
                     Rename(TempObj.TempDir + TempObj.TempName, TempObj.TempDir + newName)
+                    TempObj.TempName = newName
                 Catch ex As Exception
                     Throw ex
                 End Try
