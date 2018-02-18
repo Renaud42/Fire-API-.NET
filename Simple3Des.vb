@@ -1,15 +1,11 @@
-﻿Imports System.IO
-Imports System.Security.Cryptography
-Imports System.Text
-
-Public NotInheritable Class Simple3Des
-    Private TripleDes As New TripleDESCryptoServiceProvider
+﻿Public NotInheritable Class Simple3Des
+    Private TripleDes As New System.Security.Cryptography.TripleDESCryptoServiceProvider
 
     Private Function TruncateHash(ByVal key As String, ByVal length As Integer) As Byte()
-        Dim sha1 As New SHA1CryptoServiceProvider
+        Dim sha1 As New System.Security.Cryptography.SHA1CryptoServiceProvider
 
         ' Hash the key.
-        Dim keyBytes() As Byte = Encoding.Unicode.GetBytes(key)
+        Dim keyBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(key)
         Dim hash() As Byte = sha1.ComputeHash(keyBytes)
 
         ' Truncate or pad the hash.
@@ -25,13 +21,13 @@ Public NotInheritable Class Simple3Des
 
     Public Function EncryptData(ByVal plaintext As String, enc As Fire_API_ref.EncryptionAlgorithm) As String
         ' Convert the plaintext string to a byte array.
-        Dim plaintextBytes() As Byte = Encoding.Unicode.GetBytes(plaintext)
+        Dim plaintextBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(plaintext)
 
         If enc = Fire_API_ref.EncryptionAlgorithm.SHA1 Then
             ' Create the stream.
-            Dim ms As New MemoryStream
+            Dim ms As New System.IO.MemoryStream
             ' Create the encoder to write to the stream.
-            Dim encStream As New CryptoStream(ms, TripleDes.CreateEncryptor(), Security.Cryptography.CryptoStreamMode.Write)
+            Dim encStream As New System.Security.Cryptography.CryptoStream(ms, TripleDes.CreateEncryptor(), Security.Cryptography.CryptoStreamMode.Write)
 
             ' Use the crypto stream to write the byte array to the stream.
             encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
@@ -50,16 +46,16 @@ Public NotInheritable Class Simple3Des
 
         If enc = Fire_API_ref.EncryptionAlgorithm.SHA1 Then
             ' Create the stream.
-            Dim ms As New MemoryStream
+            Dim ms As New System.IO.MemoryStream
             ' Create the decoder to write to the stream.
-            Dim decStream As New CryptoStream(ms, TripleDes.CreateDecryptor(), Security.Cryptography.CryptoStreamMode.Write)
+            Dim decStream As New System.Security.Cryptography.CryptoStream(ms, TripleDes.CreateDecryptor(), Security.Cryptography.CryptoStreamMode.Write)
 
             ' Use the crypto stream to write the byte array to the stream.
             decStream.Write(encryptedBytes, 0, encryptedBytes.Length)
             decStream.FlushFinalBlock()
 
             ' Convert the plaintext stream to a string.
-            Return Encoding.Unicode.GetString(ms.ToArray)
+            Return System.Text.Encoding.Unicode.GetString(ms.ToArray)
         Else
             Throw New Exception
         End If
