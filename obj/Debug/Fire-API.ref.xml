@@ -35,45 +35,84 @@ Fire-API.ref
  <para>- Both (FileName + FileContent)</para>
  </summary>
 </member>
-<member name="M:Fire_API.ref.Fire_API_ref.GenerateTemp(Fire_API.ref.TempObject)">
+<member name="T:Fire_API.ref.Fire_API_ref.WriteMethod">
  <summary>
- Generate/regenerate the temp folder/file by.
+ WriteMethod may be :
+ <para>- Overwrite (will overwrite the file or value if already exists)</para>
+ <para>- NoOverwrite (will NOT overwrite the file or value and will throw an IOException if the file or value exists)</para>
  </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.GenerateTemp(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.WriteMethod)">
+ <summary>
+ Generate/regenerate the temp folder/file by giving the <code>TempObject</code> and optionally the <code>WriteMethod</code>.
+ </summary>
+ <param name="TempObj">The TempObject to generate.</param>
+ <param name="method">The method to use if the file/folder already exists.</param>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.GenerateAllTemp(System.Collections.Generic.List{Fire_API.ref.TempObject},Fire_API.ref.Fire_API_ref.WriteMethod)">
+ <summary>
+ Generate/regenerate the temp folder/file by giving the <code>List(Of TempObject)</code> and optionally the <code>WriteMethod</code>.
+ </summary>
+ <param name="TempList">The List(Of TempObject) to generate.</param>
+ <param name="method">The method to use if the file/folder already exists.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.RemoveTemp(Fire_API.ref.TempObject)">
  <summary>
- Remove a temp folder/file by giving the identifier.
+ Remove a temp folder/file by giving the TempObject.
  </summary>
+ <param name="TempObj">The TempObject to remove.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.RemoveAllTemp(System.Collections.Generic.List{Fire_API.ref.TempObject})">
  <summary>
  Remove all temp folders/files.
  </summary>
+ <param name="TempList">The List(Of TempObject) with all TempObjects stored in to remove.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.EditTempFile(Fire_API.ref.TempObject,System.String,System.Boolean,System.Text.Encoding)">
  <summary>
- Edit a temp file by giving the identifier and the content of the file.
+ Edit a temp file by giving the <code>TempObject</code>, the <code>String</code> who the content is stored in, the append <code>Boolean</code> and the <code>Encoding</code> for the file.
  </summary>
+ <param name="TempObj">The TempObject to edit.</param>
+ <param name="content">The content to add or store into file.</param>
+ <param name="append">True if you want to add lines, False if you want to replace all the content with <code>content</code> variable.</param>
+ <param name="encoding">The Encoding to use to edit the file.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.GetTempFileContent(Fire_API.ref.TempObject,System.Text.Encoding)">
  <summary>
  Get the content of a temp file.
  </summary>
+ <param name="TempObj">The TempObject to get file content.</param>
+ <param name="encoding">The Encoding to use to get the file content.</param>
 </member>
-<member name="M:Fire_API.ref.Fire_API_ref.RenameTemp(Fire_API.ref.TempObject,System.String)">
+<member name="M:Fire_API.ref.Fire_API_ref.RenameTemp(Fire_API.ref.TempObject,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
- Rename a temp folder by giving the identifier.
+ Rename a temp file/folder by giving the identifier.
  </summary>
+ <param name="TempObj">The TempObject to rename.</param>
+ <param name="newName">The new name of the file/folder.</param>
+ <param name="method">Optionally, The WriteMethod to use for rename.</param>
 </member>
-<member name="M:Fire_API.ref.Fire_API_ref.EncryptFile(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String)">
+<member name="M:Fire_API.ref.Fire_API_ref.EncryptFile(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
  Encrypt a temp file.
  </summary>
+ <param name="TempObj">The TempObject to encrypt (need to be a file).</param>
+ <param name="enc">The EncryptionAlgorithm to use.</param>
+ <param name="enctype">The EncryptionType to use.</param>
+ <param name="baseEncoding">The Encoding of base to use.</param>
+ <param name="WriteMethod">The method of write to use.</param>
+ <param name="password">The password to use (you need to remember it, or you can't decrypt your files).</param>
 </member>
-<member name="M:Fire_API.ref.Fire_API_ref.DecryptFile(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String)">
+<member name="M:Fire_API.ref.Fire_API_ref.DecryptFile(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
  Decrypt a temp file.
  </summary>
+ <param name="TempObj">The TempObject to encrypt (need to be a file).</param>
+ <param name="enc">The EncryptionAlgorithm to use.</param>
+ <param name="dectype">The EncryptionType to use for decrypt.</param>
+ <param name="baseEncoding">The Encoding of base to use.</param>
+ <param name="WriteMethod">The method of write to use.</param>
+ <param name="password">The password to use (you need to remember it, or you can't decrypt your files).</param>
 </member>
 <member name="T:Fire_API.ref.TempObject">
  <summary>
