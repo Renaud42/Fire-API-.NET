@@ -114,6 +114,14 @@ Fire-API.ref
  <param name="WriteMethod">The method of write to use.</param>
  <param name="password">The password to use (you need to remember it, or you can't decrypt your files).</param>
 </member>
+<member name="M:Fire_API.ref.Simple3Des.TruncateHash(System.String,System.Int32,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm)">
+ <summary>
+ Function to truncate hash with the key/password, the length and the selected encryption algorithm.
+ </summary>
+ <param name="key">Key/password to encrypt the text.</param>
+ <param name="length">Chain length.</param>
+ <param name="enc">Encryption algorithm to encrypt the text.</param>
+</member>
 <member name="T:Fire_API.ref.TempObject">
  <summary>
  This object is for define properties for a temp file/folder.

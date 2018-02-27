@@ -1,6 +1,8 @@
-﻿Public Class Fire_API_ref
+﻿Imports Fire_API.ref.Constants
 
-    ' TODO : Other encryptions, Constants, Design helps, Calcul helps, gadgets, AuthPoint API....
+Public Class Fire_API_ref
+
+    ' TODO : Constants, Design helps, Calcul helps, gadgets, AuthPoint API....
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                  TEMP FOLDERS                  ''
@@ -10,8 +12,11 @@
     ''' The algorithm of encryption used.
     ''' </summary>
     Public Enum EncryptionAlgorithm
+        MD5
         SHA1
         SHA256
+        SHA384
+        SHA512
     End Enum
 
     ''' <summary>
@@ -184,6 +189,9 @@
     ''' <param name="newName">The new name of the file/folder.</param>
     ''' <param name="method">Optionally, The WriteMethod to use for rename.</param>
     Public Sub RenameTemp(TempObj As TempObject, newName As String, Optional method As WriteMethod = WriteMethod.NoOverwrite)
+        ' Replaces "/" for catching bugs with the encryption system
+        newName = newName.Replace("/", ",")
+
         Try
             ' Try to rename
             Rename(TempObj.TempDir + TempObj.TempName, TempObj.TempDir + newName)
@@ -225,9 +233,9 @@
     Public Sub EncryptFile(TempObj As Fire_API.ref.TempObject, enc As EncryptionAlgorithm, enctype As EncryptionType, baseEncoding As Text.Encoding, password As String, Optional WriteMethod As WriteMethod = WriteMethod.NoOverwrite)
         If TempObj.TempType = TempObject.TempTypes.File Then
             ' Declarating the wrapper.
-            Dim wrapper As New Simple3Des(password)
+            Dim wrapper As New Simple3Des(password, enc)
             If enctype = EncryptionType.FileContent Then
-                Dim encryptedText As String = wrapper.EncryptData(GetTempFileContent(TempObj, baseEncoding), enc)
+                Dim encryptedText As String = wrapper.EncryptData(GetTempFileContent(TempObj, baseEncoding))
 
                 ' We encrypt the file with the wrapper of the selected algorithm.
                 Try
@@ -237,13 +245,13 @@
                     Throw ex
                 End Try
             ElseIf enctype = EncryptionType.FileName Then
-                Dim encryptedTextFN As String = wrapper.EncryptData(TempObj.TempName, enc)
+                Dim encryptedTextFN As String = wrapper.EncryptData(TempObj.TempName)
 
                 ' We rename the file with the encrypted text of the wrapper of the selected algorithm.
                 RenameTemp(TempObj, encryptedTextFN, WriteMethod)
             Else
-                Dim encryptedText As String = wrapper.EncryptData(GetTempFileContent(TempObj, baseEncoding), enc)
-                Dim encryptedTextFN As String = wrapper.EncryptData(TempObj.TempName, enc)
+                Dim encryptedText As String = wrapper.EncryptData(GetTempFileContent(TempObj, baseEncoding))
+                Dim encryptedTextFN As String = wrapper.EncryptData(TempObj.TempName)
 
                 ' We encrypt the file with the wrapper of the selected algorithm.
                 Try
@@ -273,11 +281,12 @@
     Public Sub DecryptFile(TempObj As Fire_API.ref.TempObject, enc As EncryptionAlgorithm, dectype As EncryptionType, baseEncoding As Text.Encoding, password As String, Optional WriteMethod As WriteMethod = WriteMethod.NoOverwrite)
         If TempObj.TempType = TempObject.TempTypes.File Then
             ' Declarating the wrapper.
-            Dim wrapper As New Simple3Des(password)
+            Dim wrapper As New Simple3Des(password, enc)
             If dectype = EncryptionType.FileContent Then
                 ' We decrypt the content with DecryptData method
                 Try
-                    Dim plainText As String = wrapper.DecryptData(GetTempFileContent(TempObj, baseEncoding), enc)
+                    Dim plainText As String = wrapper.DecryptData(GetTempFileContent(TempObj, baseEncoding))
+
                     ' We edit the content of the file with the decrypted text of the wrapper of the selected algorithm.
                     EditTempFile(TempObj, plainText, False, baseEncoding)
                 Catch ex As Exception
@@ -286,7 +295,8 @@
             ElseIf dectype = EncryptionType.FileName Then
                 ' We decrypt the name with DecryptData method
                 Try
-                    Dim plainTextFN As String = wrapper.DecryptData(TempObj.TempName, enc)
+                    Dim plainTextFN As String = wrapper.DecryptData(TempObj.TempName.Replace(",", "/"))
+
                     ' We rename the file with the decrypted text of the wrapper of the selected algorithm.
                     RenameTemp(TempObj, plainTextFN, WriteMethod)
                 Catch ex As Exception
@@ -295,7 +305,7 @@
             Else
                 ' We decrypt the content with DecryptData method
                 Try
-                    Dim plainText As String = wrapper.DecryptData(GetTempFileContent(TempObj, baseEncoding), enc)
+                    Dim plainText As String = wrapper.DecryptData(GetTempFileContent(TempObj, baseEncoding))
                     EditTempFile(TempObj, plainText, False, baseEncoding)
                 Catch ex As Exception
                     Throw ex
@@ -303,7 +313,8 @@
 
                 ' We decrypt the name with DecryptData method
                 Try
-                    Dim plainTextFN As String = wrapper.DecryptData(TempObj.TempName, enc)
+                    Dim plainTextFN As String = wrapper.DecryptData(TempObj.TempName.Replace(",", "/"))
+
                     ' We rename the file with the decrypted text of the wrapper of the selected algorithm.
                     RenameTemp(TempObj, plainTextFN, WriteMethod)
                 Catch ex As Exception

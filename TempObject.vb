@@ -18,7 +18,7 @@ Public Class TempObject
         File
     End Enum
 
-    ' What occurs when we create a new TempObject
+    ' What occurs when we create a new TempObject.
     Public Sub New(ByVal TempType As TempTypes, ByVal TempName As String, ByVal TempDir As String)
         tt = TempType
         tn = TempName
