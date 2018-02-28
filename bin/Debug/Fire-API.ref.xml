@@ -22,6 +22,32 @@ Fire-API.ref
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:Fire_API.ref.Constants">
+ <summary>
+ Constant utils class.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Constants.CalculatePi">
+ <summary>
+ Calculate Pi.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Constants.CalculateEuler(System.Int64)">
+ <summary>
+ Calculate Euler.
+ </summary>
+ <param name="iterations">Number of iterations (default is maximum for 32bit and 64bit, 18 iterations).</param>
+</member>
+<member name="T:Fire_API.ref.EncryptionException">
+ <summary>
+ Represents an error to throw when the encryption algorithm is not supported in a class.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Fire_API_ref">
+ <summary>
+ Definitively best class ever.
+ </summary>
+</member>
 <member name="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm">
  <summary>
  The algorithm of encryption used.
@@ -29,90 +55,125 @@ Fire-API.ref
 </member>
 <member name="T:Fire_API.ref.Fire_API_ref.EncryptionType">
  <summary>
- EncryptionType may be :
- <para>- FileContent (only the content of the file)</para>
- <para>- FileName (only the name of the file)</para>
- <para>- Both (FileName + FileContent)</para>
+ <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionType"/> may be :
+ <para>- <see cref="F:Fire_API.ref.Fire_API_ref.EncryptionType.FileContent"/> (only the content of the file)</para>
+ <para>- <see cref="F:Fire_API.ref.Fire_API_ref.EncryptionType.FileName"/> (only the name of the file)</para>
+ <para>- <see cref="F:Fire_API.ref.Fire_API_ref.EncryptionType.Both"/> (FileName + FileContent)</para>
  </summary>
 </member>
 <member name="T:Fire_API.ref.Fire_API_ref.WriteMethod">
  <summary>
- WriteMethod may be :
- <para>- Overwrite (will overwrite the file or value if already exists)</para>
- <para>- NoOverwrite (will NOT overwrite the file or value and will throw an IOException if the file or value exists)</para>
+ <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> may be :
+ <para>- <see cref="F:Fire_API.ref.Fire_API_ref.WriteMethod.Overwrite"/> (will overwrite the file or value if already exists)</para>
+ <para>- <see cref="F:Fire_API.ref.Fire_API_ref.WriteMethod.NoOverwrite"/> (will NOT overwrite the file or value and will throw an IOException if the file or value exists)</para>
  </summary>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.GenerateTemp(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
- Generate/regenerate the temp folder/file by giving the <code>TempObject</code> and optionally the <code>WriteMethod</code>.
+ Generate/regenerate the temp folder/file by giving the <see cref="T:Fire_API.ref.TempObject"/> and optionally the <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/>.
  </summary>
  <param name="TempObj">The TempObject to generate.</param>
  <param name="method">The method to use if the file/folder already exists.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.GenerateAllTemp(System.Collections.Generic.List{Fire_API.ref.TempObject},Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
- Generate/regenerate the temp folder/file by giving the <code>List(Of TempObject)</code> and optionally the <code>WriteMethod</code>.
+ Generate/regenerate the temp folder/file by giving the <see cref="T:System.Collections.Generic.List`1"/> and optionally the <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/>.
  </summary>
  <param name="TempList">The List(Of TempObject) to generate.</param>
  <param name="method">The method to use if the file/folder already exists.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.RemoveTemp(Fire_API.ref.TempObject)">
  <summary>
- Remove a temp folder/file by giving the TempObject.
+ Remove a temp folder/file by giving the <see cref="T:Fire_API.ref.TempObject"/>.
  </summary>
  <param name="TempObj">The TempObject to remove.</param>
 </member>
-<member name="M:Fire_API.ref.Fire_API_ref.RemoveAllTemp(System.Collections.Generic.List{Fire_API.ref.TempObject})">
+<member name="M:Fire_API.ref.Fire_API_ref.RemoveTemps(System.Collections.Generic.List{Fire_API.ref.TempObject})">
  <summary>
- Remove all temp folders/files.
+ Remove multiple temp folders/files at once.
  </summary>
- <param name="TempList">The List(Of TempObject) with all TempObjects stored in to remove.</param>
+ <param name="TempList">The <see cref="T:System.Collections.Generic.List`1"/> with all <see cref="T:Fire_API.ref.TempObject"/>s stored in to remove.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.EditTempFile(Fire_API.ref.TempObject,System.String,System.Boolean,System.Text.Encoding)">
  <summary>
- Edit a temp file by giving the <code>TempObject</code>, the <code>String</code> who the content is stored in, the append <code>Boolean</code> and the <code>Encoding</code> for the file.
+ Edit a temp file by giving the <see cref="T:Fire_API.ref.TempObject"/>, the <see cref="T:System.String"/> who the content is stored in, the append <see cref="T:System.Boolean"/> and the <see cref="T:System.Text.Encoding"/> for the file.
  </summary>
- <param name="TempObj">The TempObject to edit.</param>
+ <param name="TempObj">The <see cref="T:Fire_API.ref.TempObject"/> to edit.</param>
  <param name="content">The content to add or store into file.</param>
  <param name="append">True if you want to add lines, False if you want to replace all the content with <code>content</code> variable.</param>
- <param name="encoding">The Encoding to use to edit the file.</param>
+ <param name="encoding">The <see cref="T:System.Text.Encoding"/> to use to edit the file.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.GetTempFileContent(Fire_API.ref.TempObject,System.Text.Encoding)">
  <summary>
  Get the content of a temp file.
  </summary>
- <param name="TempObj">The TempObject to get file content.</param>
- <param name="encoding">The Encoding to use to get the file content.</param>
+ <param name="TempObj">The <see cref="T:Fire_API.ref.TempObject"/> to get file content.</param>
+ <param name="encoding">The <see cref="T:System.Text.Encoding"/> to use to get the file content.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.RenameTemp(Fire_API.ref.TempObject,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
- Rename a temp file/folder by giving the identifier.
+ Rename a temp file/folder.
  </summary>
- <param name="TempObj">The TempObject to rename.</param>
+ <param name="TempObj">The <see cref="T:Fire_API.ref.TempObject"/> to rename.</param>
  <param name="newName">The new name of the file/folder.</param>
- <param name="method">Optionally, The WriteMethod to use for rename.</param>
+ <param name="method">Optionally, the <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use for rename.</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.EncryptFile(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
  Encrypt a temp file.
+ <para>
+ WARNING : The encryption works with TripleDES (see <see cref="T:Fire_API.ref.Simple3Des"/> class) combined with the <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm"/> that you choose.
+ When encrypt a file name with this method, the "/" characters of the hash will be automatically replaced with "," because Windows doesn't accept file names with "/".
+ </para>
  </summary>
- <param name="TempObj">The TempObject to encrypt (need to be a file).</param>
- <param name="enc">The EncryptionAlgorithm to use.</param>
- <param name="enctype">The EncryptionType to use.</param>
- <param name="baseEncoding">The Encoding of base to use.</param>
- <param name="WriteMethod">The method of write to use.</param>
+ <param name="TempObj">The <see cref="T:Fire_API.ref.TempObject"/> to encrypt (need to be a file).</param>
+ <param name="enc">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm"/> to use.</param>
+ <param name="enctype">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionType"/> to use.</param>
+ <param name="baseEncoding">The <see cref="T:System.Text.Encoding"/> of base to use.</param>
+ <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
+ <param name="password">The password to use (you need to remember it, or you can't decrypt your files).</param>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.EncryptFiles(System.Collections.Generic.List{Fire_API.ref.TempObject},Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
+ <summary>
+ Encrypt temp files.
+ <para>
+ WARNING : The encryption works with TripleDES (see <see cref="T:Fire_API.ref.Simple3Des"/> class) combined with the <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm"/> that you choose.
+ When encrypt a file name with this method, the "/" characters of the hash will be automatically replaced with "," because Windows doesn't accept file names with "/".
+ </para>
+ </summary>
+ <param name="TempList">The <see cref="T:System.Collections.Generic.List`1"/> to encrypt (only files will be encrypted).</param>
+ <param name="enc">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm"/> to use.</param>
+ <param name="enctype">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionType"/> to use.</param>
+ <param name="baseEncoding">The <see cref="T:System.Text.Encoding"/> of base to use.</param>
+ <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
  <param name="password">The password to use (you need to remember it, or you can't decrypt your files).</param>
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.DecryptFile(Fire_API.ref.TempObject,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
  Decrypt a temp file.
  </summary>
- <param name="TempObj">The TempObject to encrypt (need to be a file).</param>
- <param name="enc">The EncryptionAlgorithm to use.</param>
- <param name="dectype">The EncryptionType to use for decrypt.</param>
- <param name="baseEncoding">The Encoding of base to use.</param>
- <param name="WriteMethod">The method of write to use.</param>
- <param name="password">The password to use (you need to remember it, or you can't decrypt your files).</param>
+ <param name="TempObj">The <see cref="T:Fire_API.ref.TempObject"/> to decrypt (need to be a file).</param>
+ <param name="enc">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm"/> to use.</param>
+ <param name="dectype">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionType"/> to use.</param>
+ <param name="baseEncoding">The <see cref="T:System.Text.Encoding"/> of base to use.</param>
+ <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
+ <param name="password">The password used to encrypt the file.</param>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.DecryptFiles(System.Collections.Generic.List{Fire_API.ref.TempObject},Fire_API.ref.Fire_API_ref.EncryptionAlgorithm,Fire_API.ref.Fire_API_ref.EncryptionType,System.Text.Encoding,System.String,Fire_API.ref.Fire_API_ref.WriteMethod)">
+ <summary>
+ Decrypt temp files.
+ </summary>
+ <param name="TempList">The <see cref="T:System.Collections.Generic.List`1"/> to decrypt (only files will be decrypted).</param>
+ <param name="enc">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm"/> to use.</param>
+ <param name="dectype">The <see cref="T:Fire_API.ref.Fire_API_ref.EncryptionType"/> to use.</param>
+ <param name="baseEncoding">The <see cref="T:System.Text.Encoding"/> of base to use.</param>
+ <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
+ <param name="password">The password used to encrypt the files.</param>
+</member>
+<member name="T:Fire_API.ref.Simple3Des">
+ <summary>
+ Advanced custom integrated Simple TripleDES class.
+ </summary>
 </member>
 <member name="M:Fire_API.ref.Simple3Des.TruncateHash(System.String,System.Int32,Fire_API.ref.Fire_API_ref.EncryptionAlgorithm)">
  <summary>
@@ -121,6 +182,18 @@ Fire-API.ref
  <param name="key">Key/password to encrypt the text.</param>
  <param name="length">Chain length.</param>
  <param name="enc">Encryption algorithm to encrypt the text.</param>
+</member>
+<member name="M:Fire_API.ref.Simple3Des.EncryptData(System.String)">
+ <summary>
+ Function to encrypt data.
+ </summary>
+ <param name="plaintext">Text to encrypt.</param>
+</member>
+<member name="M:Fire_API.ref.Simple3Des.DecryptData(System.String)">
+ <summary>
+ Function to decrypt data.
+ </summary>
+ <param name="encryptedtext">Hash to decrypt.</param>
 </member>
 <member name="T:Fire_API.ref.TempObject">
  <summary>

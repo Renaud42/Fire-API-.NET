@@ -1,10 +1,15 @@
-﻿Public NotInheritable Class Simple3Des
+﻿Imports System.Security.Cryptography
+
+''' <summary>
+''' Advanced custom integrated Simple TripleDES class.
+''' </summary>
+Public NotInheritable Class Simple3Des
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''             CUSTOM SIMPLE3DES CLASS            ''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Private TripleDes As New System.Security.Cryptography.TripleDESCryptoServiceProvider
+    Private TripleDes As New TripleDESCryptoServiceProvider
 
     ''' <summary>
     ''' Function to truncate hash with the key/password, the length and the selected encryption algorithm.
@@ -14,11 +19,11 @@
     ''' <param name="enc">Encryption algorithm to encrypt the text.</param>
     Private Function TruncateHash(ByVal key As String, ByVal length As Integer, ByVal enc As Fire_API_ref.EncryptionAlgorithm) As Byte()
         ' Creating variables for all encryption types.
-        Dim md5 As New System.Security.Cryptography.MD5CryptoServiceProvider
-        Dim sha1 As New System.Security.Cryptography.SHA1CryptoServiceProvider
-        Dim sha256 As New System.Security.Cryptography.SHA256CryptoServiceProvider
-        Dim sha384 As New System.Security.Cryptography.SHA384CryptoServiceProvider
-        Dim sha512 As New System.Security.Cryptography.SHA512CryptoServiceProvider
+        Dim md5 As New MD5CryptoServiceProvider
+        Dim sha1 As New SHA1CryptoServiceProvider
+        Dim sha256 As New SHA256CryptoServiceProvider
+        Dim sha384 As New SHA384CryptoServiceProvider
+        Dim sha512 As New SHA512CryptoServiceProvider
 
         ' Hash the key.
         Dim keyBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(key)
@@ -44,11 +49,19 @@
 
     ' What occurs when we create a new Simple3Des wrapper.
     Sub New(ByVal key As String, ByVal enc As Fire_API_ref.EncryptionAlgorithm)
-        ' Initialize the crypto provider.
-        TripleDes.Key = TruncateHash(key, TripleDes.KeySize \ 8, enc)
-        TripleDes.IV = TruncateHash("", TripleDes.BlockSize \ 8, enc)
+        Try
+            ' Initialize the crypto provider.
+            TripleDes.Key = TruncateHash(key, TripleDes.KeySize \ 8, enc)
+            TripleDes.IV = TruncateHash("", TripleDes.BlockSize \ 8, enc)
+        Catch ex As Exception
+            Throw New EncryptionException
+        End Try
     End Sub
 
+    ''' <summary>
+    ''' Function to encrypt data.
+    ''' </summary>
+    ''' <param name="plaintext">Text to encrypt.</param>
     Public Function EncryptData(ByVal plaintext As String) As String
         ' Convert the plaintext string to a byte array.
         Dim plaintextBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(plaintext)
@@ -56,7 +69,7 @@
         ' Create the stream.
         Dim ms As New System.IO.MemoryStream
         ' Create the encoder to write to the stream.
-        Dim encStream As New System.Security.Cryptography.CryptoStream(ms, TripleDes.CreateEncryptor(), Security.Cryptography.CryptoStreamMode.Write)
+        Dim encStream As New CryptoStream(ms, TripleDes.CreateEncryptor(), Security.Cryptography.CryptoStreamMode.Write)
 
         ' Use the crypto stream to write the byte array to the stream.
         encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
@@ -66,6 +79,10 @@
         Return Convert.ToBase64String(ms.ToArray)
     End Function
 
+    ''' <summary>
+    ''' Function to decrypt data.
+    ''' </summary>
+    ''' <param name="encryptedtext">Hash to decrypt.</param>
     Public Function DecryptData(ByVal encryptedtext As String) As String
         ' Convert the encrypted text string to a byte array.
         Dim encryptedBytes() As Byte = Convert.FromBase64String(encryptedtext)
@@ -73,7 +90,7 @@
         ' Create the stream.
         Dim ms As New System.IO.MemoryStream
         ' Create the decoder to write to the stream.
-        Dim decStream As New System.Security.Cryptography.CryptoStream(ms, TripleDes.CreateDecryptor(), Security.Cryptography.CryptoStreamMode.Write)
+        Dim decStream As New CryptoStream(ms, TripleDes.CreateDecryptor(), Security.Cryptography.CryptoStreamMode.Write)
 
         ' Use the crypto stream to write the byte array to the stream.
         decStream.Write(encryptedBytes, 0, encryptedBytes.Length)
