@@ -32,11 +32,17 @@ Fire-API.ref
  Calculate Pi.
  </summary>
 </member>
-<member name="M:Fire_API.ref.Constants.CalculateEuler(System.Int64)">
+<member name="M:Fire_API.ref.Constants.CalculateEuler(System.UInt64)">
  <summary>
  Calculate Euler.
  </summary>
- <param name="iterations">Number of iterations (default is maximum for 32bit and 64bit, 18 iterations).</param>
+ <param name="iterations">Number of iterations (due to a Visual Basic language limitation, the maximum number of iterations is 18 iterations).</param>
+</member>
+<member name="M:Fire_API.ref.Constants.GetEulerString(System.UInt64)">
+ <summary>
+ Get Euler String with specified digits.
+ </summary>
+ <param name="digits">Number of digits (max = 10000).</param>
 </member>
 <member name="T:Fire_API.ref.EncryptionException">
  <summary>
