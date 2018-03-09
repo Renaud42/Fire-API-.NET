@@ -1,6 +1,4 @@
-﻿Imports Fire_API.ref.Constants
-
-''' <summary>
+﻿''' <summary>
 ''' Definitively best class ever.
 ''' </summary>
 Public Class Fire_API_ref
