@@ -3,10 +3,12 @@
 Imports System.Windows.Forms
 Imports System.Runtime.InteropServices
 Imports System.Drawing.Printing
+Imports System.Drawing
 
 ''' <summary>
 ''' Printable RichTextBox control.
 ''' </summary>
+<ToolboxBitmap(GetType(RichTextBox))>
 Public Class FireRichTextBoxPrintCtrl
     Inherits RichTextBox
     ' Convert the unit that is used by the .NET framework (1/100 inch) 
@@ -42,10 +44,13 @@ Public Class FireRichTextBoxPrintCtrl
     Private Declare Function SendMessage Lib "USER32" Alias "SendMessageA" (ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wp As IntPtr, ByVal lp As IntPtr) As IntPtr
 
     ' Render the contents of the RichTextBox for printing
-    'Return the last character printed + 1 (printing start from this point for next page)
+    ' Return the last character printed + 1 (printing start from this point for next page)
     ''' <summary>
     ''' Function for print FireRichTextBoxPrintCtrl content.
     ''' </summary>
+    ''' <param name="charFrom">The first character to print position.</param>
+    ''' <param name="charTo">The last character to print position.</param>
+    ''' <param name="e">The <see cref="PrintPageEventArgs"/> event.</param>
     Public Function Print(ByVal charFrom As Integer, ByVal charTo As Integer, ByVal e As PrintPageEventArgs) As Integer
         ' Mark starting and ending character 
         Dim cRange As CHARRANGE
