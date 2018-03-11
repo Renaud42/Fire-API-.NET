@@ -12,10 +12,10 @@ Public Class Constants
 
     ''' <summary>
     ''' EulerDB object.
-    ''' <para>- NASA (https://apod.nasa.gov/htmltest/gifcity/e.2mil), 2 millions digits</para>
+    ''' <para>- MacTutorHistory (http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html), max = 9999 digits</para>
     ''' </summary>
     Public Enum EulerDB
-        NASA
+        MacTutorHistory
     End Enum
 
     ''' <summary>
@@ -51,19 +51,31 @@ Public Class Constants
     ''' Get Euler String with specified digits.
     ''' </summary>
     ''' <param name="digits">Number of digits (max = 9999).</param>
-    Public Shared Function GetEulerString(digits As ULong) As String
+    Public Shared Function GetEulerString(digits As Long) As String
         ' Substring 2 because of the 2 first characters "2." of the String Euler10000 + the number of digits precised in this function.
-        Return Euler10000.Substring(0, 2 + digits)
+        If digits = 0 Then
+            Return 2
+        ElseIf digits < 0 Then
+            Return 2 * 10 ^ digits
+        Else
+            Return Euler10000.Substring(0, 2 + digits)
+        End If
     End Function
 
     ''' <summary>
     ''' Get Euler String from a database specified.
     ''' </summary>
-    Public Shared Function GetEulerFromDatabase(digits As ULong, database As EulerDB) As String
-        Dim data As String
-        Try
-            If database = EulerDB.NASA Then
+    Public Shared Function GetEulerFromDatabase(digits As Long, database As EulerDB) As String
+        Dim data As String = ""
+        Dim wc As New Net.WebClient
 
+        Try
+            If digits = 0 Then
+                data = 2
+            ElseIf digits < 0 Then
+                data = 2 * 10 ^ digits
+            ElseIf database = EulerDB.MacTutorHistory Then
+                data = wc.DownloadString("http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html").Replace(" ", "").Replace(vbNewLine, "").Substring(219, 2 + digits)
             End If
         Catch ex As Exception
             Throw ex

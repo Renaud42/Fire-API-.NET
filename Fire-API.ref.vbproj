@@ -69,7 +69,7 @@
     <Compile Include="Constants.vb" />
     <Compile Include="EncryptionException.vb" />
     <Compile Include="Fire-API.ref.vb" />
-    <Compile Include="FireRichTextBoxPrintCtrl.vb">
+    <Compile Include="FireRichTextBoxPrintable.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

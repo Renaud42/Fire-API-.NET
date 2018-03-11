@@ -9,7 +9,7 @@ Imports System.Drawing
 ''' Printable RichTextBox control.
 ''' </summary>
 <ToolboxBitmap(GetType(RichTextBox))>
-Public Class FireRichTextBoxPrintCtrl
+Public Class FireRichTextBoxPrintable
     Inherits RichTextBox
     ' Convert the unit that is used by the .NET framework (1/100 inch) 
     ' and the unit that is used by Win32 API calls (twips 1/1440 inch)

@@ -30,7 +30,7 @@ Fire-API.ref
 <member name="T:Fire_API.ref.Constants.EulerDB">
  <summary>
  EulerDB object.
- <para>- NASA (https://apod.nasa.gov/htmltest/gifcity/e.2mil), 2 millions digits</para>
+ <para>- MacTutorHistory (http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html), 9999 digits</para>
  </summary>
 </member>
 <member name="M:Fire_API.ref.Constants.CalculatePi">
@@ -50,7 +50,7 @@ Fire-API.ref
  </summary>
  <param name="digits">Number of digits (max = 9999).</param>
 </member>
-<member name="M:Fire_API.ref.Constants.GetEulerFromDatabase(System.UInt64,Fire_API.ref.Constants.EulerDB)">
+<member name="M:Fire_API.ref.Constants.GetEulerFromDatabase(System.Int64,Fire_API.ref.Constants.EulerDB)">
  <summary>
  Get Euler String from a database specified.
  </summary>
@@ -187,12 +187,12 @@ Fire-API.ref
  <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
  <param name="password">The password used to encrypt the files.</param>
 </member>
-<member name="T:Fire_API.ref.FireRichTextBoxPrintCtrl">
+<member name="T:Fire_API.ref.FireRichTextBoxPrintable">
  <summary>
  Printable RichTextBox control.
  </summary>
 </member>
-<member name="M:Fire_API.ref.FireRichTextBoxPrintCtrl.Print(System.Int32,System.Int32,System.Drawing.Printing.PrintPageEventArgs)">
+<member name="M:Fire_API.ref.FireRichTextBoxPrintable.Print(System.Int32,System.Int32,System.Drawing.Printing.PrintPageEventArgs)">
  <summary>
  Function for print FireRichTextBoxPrintCtrl content.
  </summary>
