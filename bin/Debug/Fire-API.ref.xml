@@ -30,7 +30,8 @@ Fire-API.ref
 <member name="T:Fire_API.ref.Constants.EulerDB">
  <summary>
  EulerDB object.
- <para>- MacTutorHistory (http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html), 9999 digits</para>
+ <para>- MacTutorHistory (http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html), max = 9999 digits</para>
+ <para>- Utah (https://www.math.utah.edu/~pa/math/e.html), max = 9999 digits</para>
  </summary>
 </member>
 <member name="M:Fire_API.ref.Constants.CalculatePi">
@@ -44,7 +45,7 @@ Fire-API.ref
  </summary>
  <param name="iterations">Number of iterations (due to a Visual Basic language limitation, the maximum number of iterations is 18 iterations).</param>
 </member>
-<member name="M:Fire_API.ref.Constants.GetEulerString(System.UInt64)">
+<member name="M:Fire_API.ref.Constants.GetEulerString(System.Int64)">
  <summary>
  Get Euler String with specified digits.
  </summary>

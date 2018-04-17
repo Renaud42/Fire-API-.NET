@@ -1,4 +1,3 @@
-c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbprojResolveAssemblyReference.cache
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire_API.ref.Resources.resources
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbproj.GenerateResource.Cache
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\bin\Debug\Fire-API.ref.dll
@@ -7,3 +6,4 @@ c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\b
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.dll
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.xml
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.pdb
+C:\Users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbprojResolveAssemblyReference.cache
