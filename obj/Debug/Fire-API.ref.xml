@@ -27,10 +27,24 @@ Fire-API.ref
  Constant utils class.
  </summary>
 </member>
+<member name="M:Fire_API.ref.Constants.Initialize(Fire_API.ref.Constants.EulerDB,System.Boolean)">
+ <summary>
+ Initialize one of the database of the class before getting its numbers.
+ </summary>
+ <param name="Database">Database to get numbers to</param>
+ <param name="NetworkCheck">Check if an network connection is available else <code>Throw New Exception("Can't connect to the network.")</code></param>
+</member>
+<member name="M:Fire_API.ref.Constants.InitializeAll(System.Boolean)">
+ <summary>
+ Initialize the class before getting numbers from database.
+ </summary>
+ <param name="NetworkCheck">Check if an network connection is available else <code>Throw New Exception("Can't connect to the network.")</code></param>
+</member>
 <member name="T:Fire_API.ref.Constants.EulerDB">
  <summary>
  EulerDB object.
  <para>- MacTutorHistory (http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html), max = 9999 digits</para>
+ <para>- NASA (https://apod.nasa.gov/htmltest/gifcity/e.5mil), max = 5000157 digits</para>
  <para>- Utah (https://www.math.utah.edu/~pa/math/e.html), max = 9999 digits</para>
  </summary>
 </member>
@@ -43,13 +57,14 @@ Fire-API.ref
  <summary>
  Calculate Euler.
  </summary>
- <param name="iterations">Number of iterations (due to a Visual Basic language limitation, the maximum number of iterations is 18 iterations).</param>
+ <param name="Iterations">Number of iterations (due to a Visual Basic language limitation, the maximum number of iterations is 18 iterations).</param>
 </member>
 <member name="M:Fire_API.ref.Constants.GetEulerString(System.Int64)">
  <summary>
  Get Euler String with specified digits.
+ WARNING : You need to do <code>Contants.Initialize()</code> before using this.
  </summary>
- <param name="digits">Number of digits (max = 9999).</param>
+ <param name="Digits">Number of digits (max = 9999).</param>
 </member>
 <member name="M:Fire_API.ref.Constants.GetEulerFromDatabase(System.Int64,Fire_API.ref.Constants.EulerDB)">
  <summary>

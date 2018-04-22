@@ -1,6 +1,4 @@
-﻿Imports Fire_API.ref.Constants
-
-''' <summary>
+﻿''' <summary>
 ''' Definitively best class ever.
 ''' </summary>
 Public Class Fire_API_ref
@@ -9,17 +7,6 @@ Public Class Fire_API_ref
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                  TEMP FOLDERS                  ''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-    ' New instance of the Fire-API
-    Public Sub New()
-        If My.Computer.Network.IsAvailable Then
-            Try
-                ConstantsWorker()
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End If
-    End Sub
 
     ''' <summary>
     ''' The algorithm of encryption used.
