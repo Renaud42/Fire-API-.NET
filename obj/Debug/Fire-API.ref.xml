@@ -27,6 +27,31 @@ Fire-API.ref
  Constant utils class.
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.Pi">
+ <summary>
+ π constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Pi100000">
+ <summary>
+ π constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.E">
+ <summary>
+ Euler constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Euler">
+ <summary>
+ Euler constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Euler10000">
+ <summary>
+ Euler constant.
+ </summary>
+</member>
 <member name="M:Fire_API.ref.Constants.Initialize(Fire_API.ref.Constants.PiDB,System.Boolean)">
  <summary>
  Initialize one of the π databases of the class before getting its numbers.
@@ -106,6 +131,21 @@ Fire-API.ref
  <param name="Database"><seealso cref="T:Fire_API.ref.Constants.EulerDB"/> or <seealso cref="T:Fire_API.ref.Constants.PiDB"/></param>
  <param name="Digits">Length of the decimals of the number.</param>
  <param name="Index">Index for the substring of the result.</param>
+</member>
+<member name="F:Fire_API.ref.Constants.Avogadro">
+ <summary>
+ Avogadro's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.G">
+ <summary>
+ Gravitational constant on Earth.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.EarthGravitationalForce">
+ <summary>
+ Gravitational constant on Earth.
+ </summary>
 </member>
 <member name="T:Fire_API.ref.EncryptionException">
  <summary>
