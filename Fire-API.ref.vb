@@ -2,7 +2,6 @@
 ''' Definitively best class ever.
 ''' </summary>
 Public Class Fire_API_ref
-    ' TODO : Constants, Design helps, Calcul helps, gadgets, AuthPoint API....
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                  TEMP FOLDERS                  ''

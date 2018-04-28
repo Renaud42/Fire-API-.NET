@@ -27,6 +27,261 @@ Fire-API.ref
  Constant utils class.
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.BIT_False">
+ <summary>
+ Bit false, zero, no, low state
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.BIT_No">
+ <summary>
+ Bit false, zero, no, low state
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.BIT_Low">
+ <summary>
+ Bit false, zero, no, low state
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.BIT_True">
+ <summary>
+ Bit true, one, yes, high state
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.BIT_Yes">
+ <summary>
+ Bit true, one, yes, high state
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.BIT_High">
+ <summary>
+ Bit true, one, yes, high state
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Continue">
+ <summary>
+ (1xx) Messages with a status line or an header followed by a CRLF line.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_SwitchingProtocols">
+ <summary>
+ (1xx) Messages with a status line or an header followed by a CRLF line.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_OK">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Created">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Accepted">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_NonAuthoritativeInformation">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_NoContent">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_ResetContent">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_PartialContent">
+ <summary>
+ (2xx) Messages of successful request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_MultipleChoices">
+ <summary>
+ (3xx) Messages with a message who say that we need to do something for finish the request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_MovedPermanently">
+ <summary>
+ (3xx) Messages with a message who say that we need to do something for finish the request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_MovedTemporarily">
+ <summary>
+ (3xx) Messages with a message who say that we need to do something for finish the request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_SeeOther">
+ <summary>
+ (3xx) Messages with a message who say that we need to do something for finish the request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_NotModified">
+ <summary>
+ (3xx) Messages with a message who say that we need to do something for finish the request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_UseProxy">
+ <summary>
+ (3xx) Messages with a message who say that we need to do something for finish the request.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_BadRequest">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Unauthorized">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_PaymentRequired">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Forbidden">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_NotFound">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_MethodNotAllowed">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_NotAcceptable">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_ProxyAuthenticationRequired">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_RequestTimeOut">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Conflict">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_Gone">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_LengthRequired">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_PreconditionFailed">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_RequestEntityTooLarge">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_RequestURITooLong">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_UnsupportedMediaType">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_RequestedRangeUnsatifiable">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_ExpectationFailed">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_InternalServerError">
+ <summary>
+ (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_NotImplemented">
+ <summary>
+ (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_BadGateway">
+ <summary>
+ (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_ServiceUnavailable">
+ <summary>
+ (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_GatewayTimeOut">
+ <summary>
+ (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_HTTPVersionNotSupported">
+ <summary>
+ (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Champernowne">
+ <summary>
+ Champernowne's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.C10">
+ <summary>
+ Champernowne's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Champernowne100000">
+ <summary>
+ Champernowne's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.GoldNumber">
+ <summary>
+ Gold number constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.GodNumber">
+ <summary>
+ Gold number constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.GoldSection">
+ <summary>
+ Gold number constant.
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.Pi">
  <summary>
  π constant.
@@ -88,6 +343,18 @@ Fire-API.ref
  <para>- Utah (https://www.math.utah.edu/~pa/math/pi.html), max = 9999 digits, protocol = HTTPS</para>
  </summary>
 </member>
+<member name="M:Fire_API.ref.Constants.CalculateChampernowneString(System.UInt64)">
+ <summary>
+ Calculate Champernowne String with specified digits.
+ </summary>
+ <param name="Digits">Number of digits to compute.</param>
+</member>
+<member name="M:Fire_API.ref.Constants.GetChampernowneString(System.Int64)">
+ <summary>
+ Get Champernowne String with specified digits.
+ </summary>
+ <param name="Digits">Number of digits (max = 100000).</param>
+</member>
 <member name="M:Fire_API.ref.Constants.GetPi">
  <summary>
  Calculate π.
@@ -128,13 +395,43 @@ Fire-API.ref
  <summary>
  Internal method for parsing URLs for getting constants.
  </summary>
- <param name="Database"><seealso cref="T:Fire_API.ref.Constants.EulerDB"/> or <seealso cref="T:Fire_API.ref.Constants.PiDB"/></param>
+ <param name="Database"><seealso cref="T:Fire_API.ref.Constants.EulerDB"/> or <seealso cref="T:Fire_API.ref.Constants.PiDB"/> <seealso cref="T:System.String"/> variable to initialize</param>
  <param name="Digits">Length of the decimals of the number.</param>
  <param name="Index">Index for the substring of the result.</param>
+</member>
+<member name="M:Fire_API.ref.Constants.SecondDegreePolynomialParabolaVertexGetX(System.Decimal,System.Decimal)">
+ <summary>
+ Get the X coordinate of the vertex of a second degree polynomial graphical parabola representation (-b divided by 2a with a ≠ 0).
+ </summary>
+ <param name="a">x² coefficient of the second degree polynomial</param>
+ <param name="b">x coefficient of the second degree polynomial</param>
+</member>
+<member name="M:Fire_API.ref.Constants.HomographicForbiddenValue(System.Decimal,System.Decimal)">
+ <summary>
+ Get the forbidden value of an homographic function (-d divided by c with c ≠ 0).
+ This value will define the set of definitions of the homographic function on ℝ \ {<seealso cref="M:Fire_API.ref.Constants.HomographicForbiddenValue(System.Decimal,System.Decimal)"/>}.
+ </summary>
+ <param name="c"></param>
+ <param name="d"></param>
 </member>
 <member name="F:Fire_API.ref.Constants.Avogadro">
  <summary>
  Avogadro's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.C">
+ <summary>
+ Light speed constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.LightSpeed">
+ <summary>
+ Light speed constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.ElementaryCharge">
+ <summary>
+ Elementary charge constant.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.G">

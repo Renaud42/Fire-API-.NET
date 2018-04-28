@@ -73,6 +73,7 @@
     <Compile Include="Constants.vb" />
     <Compile Include="EncryptionException.vb" />
     <Compile Include="Fire-API.ref.vb" />
+    <Compile Include="Fire-Auth.vb" />
     <Compile Include="FireRichTextBoxPrintable.vb">
       <SubType>Component</SubType>
     </Compile>
