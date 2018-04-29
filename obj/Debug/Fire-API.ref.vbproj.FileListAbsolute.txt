@@ -8,3 +8,4 @@ c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\o
 c:\users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.pdb
 C:\Users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbprojResolveAssemblyReference.cache
 C:\Users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire-API.ref.vbproj.CoreCompileInputs.cache
+C:\Users\renau\documents\visual studio 2017\Projects\Fire-API.ref\Fire-API.ref\obj\Debug\Fire_API.ref.Fire_Auth_Window.resources

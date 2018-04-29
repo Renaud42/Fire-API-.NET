@@ -73,6 +73,12 @@
     <Compile Include="Constants.vb" />
     <Compile Include="EncryptionException.vb" />
     <Compile Include="Fire-API.ref.vb" />
+    <Compile Include="Fire-Auth Window.Designer.vb">
+      <DependentUpon>Fire-Auth Window.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fire-Auth Window.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Fire-Auth.vb" />
     <Compile Include="FireRichTextBoxPrintable.vb">
       <SubType>Component</SubType>
@@ -96,6 +102,9 @@
     <Compile Include="TempObject.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Fire-Auth Window.resx">
+      <DependentUpon>Fire-Auth Window.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

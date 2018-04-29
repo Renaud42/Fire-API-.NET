@@ -19,6 +19,18 @@ Public Class Constants
     ''' </summary>
     Public Const BIT_True = 1, BIT_Yes = 1, BIT_High = 1
 
+
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
+    ''                   FIRE-AUTH                    ''
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ' Constants
+    ''' <summary>
+    ''' Where the requests file of the API is located on Fire-Softwares webserver.
+    ''' </summary>
+    Public Const RequestFile As String = "https://www.fire-softwares.ga/api/"
+
+
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                      HTTP                      ''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -43,13 +55,16 @@ Public Class Constants
     ''' <summary>
     ''' (4xx) Error message (if you see this kind of message, run away from here).
     ''' </summary>
-    Public Const HTTP_BadRequest = 400, HTTP_Unauthorized = 401, HTTP_PaymentRequired = 402, HTTP_Forbidden = 403, HTTP_NotFound = 404, HTTP_MethodNotAllowed = 405, HTTP_NotAcceptable = 406, HTTP_ProxyAuthenticationRequired = 407, HTTP_RequestTimeOut = 408, HTTP_Conflict = 409, HTTP_Gone = 410, HTTP_LengthRequired = 411, HTTP_PreconditionFailed = 412, HTTP_RequestEntityTooLarge = 413, HTTP_RequestURITooLong = 414, HTTP_UnsupportedMediaType = 415, HTTP_RequestedRangeUnsatifiable = 416, HTTP_ExpectationFailed = 417
+    Public Const HTTP_BadRequest = 400, HTTP_Unauthorized = 401, HTTP_PaymentRequired = 402, HTTP_Forbidden = 403, HTTP_NotFound = 404, HTTP_MethodNotAllowed = 405, HTTP_NotAcceptable = 406, HTTP_ProxyAuthenticationRequired = 407, HTTP_RequestTimeOut = 408, HTTP_Conflict = 409, HTTP_Gone = 410, HTTP_LengthRequired = 411, HTTP_PreconditionFailed = 412, HTTP_RequestEntityTooLarge = 413, HTTP_RequestURITooLong = 414, HTTP_UnsupportedMediaType = 415, HTTP_RequestedRangeUnsatifiable = 416, HTTP_ExpectationFailed = 417, HTTP_TooManyRequests = 425, HTTP_TooManyRequests2 = 429
     ' Server errors messages (5xx)
     ''' <summary>
     ''' (5xx) Server error messages.
     ''' </summary>
     Public Const HTTP_InternalServerError = 500, HTTP_NotImplemented = 501, HTTP_BadGateway = 502, HTTP_ServiceUnavailable = 503, HTTP_GatewayTimeOut = 504, HTTP_HTTPVersionNotSupported = 505
-
+    ''' <summary>
+    ''' (10xx) Error 1000 message.
+    ''' </summary>
+    Public Const HTTP_1000Error = 1000
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                      MATH                      ''
@@ -345,8 +360,7 @@ Public Class Constants
     ''' <param name="Digits">Length of the decimals of the number.</param>
     ''' <param name="Index">Index for the substring of the result.</param>
     Private Shared Function ParseUrl(Database As String, Digits As Long, Index As UInt32) As String
-        ' Substring 2 because of the 2 first characters "2." of the String Euler10000 + the number of digits precised in this function.
-        Return Database.Replace(" ", "").Replace(Environment.NewLine, "").Substring(Index, 2 + Digits)
+        Return Database.Replace(" ", "").Replace(Environment.NewLine, "").Substring(Index, 2 + Digits)      ' Substring 2 because of the 2 first characters "2." of the String Euler10000 + the number of digits precised in this function.
     End Function
 
     ''' <summary>

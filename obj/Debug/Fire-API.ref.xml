@@ -57,6 +57,11 @@ Fire-API.ref
  Bit true, one, yes, high state
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.RequestFile">
+ <summary>
+ Where the requests file of the API is located on Fire-Softwares webserver.
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.HTTP_Continue">
  <summary>
  (1xx) Messages with a status line or an header followed by a CRLF line.
@@ -222,6 +227,16 @@ Fire-API.ref
  (4xx) Error message (if you see this kind of message, run away from here).
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.HTTP_TooManyRequests">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_TooManyRequests2">
+ <summary>
+ (4xx) Error message (if you see this kind of message, run away from here).
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.HTTP_InternalServerError">
  <summary>
  (5xx) Server error messages.
@@ -250,6 +265,11 @@ Fire-API.ref
 <member name="F:Fire_API.ref.Constants.HTTP_HTTPVersionNotSupported">
  <summary>
  (5xx) Server error messages.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.HTTP_1000Error">
+ <summary>
+ (10xx) Error 1000 message.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.Champernowne">
@@ -416,17 +436,32 @@ Fire-API.ref
 </member>
 <member name="F:Fire_API.ref.Constants.Avogadro">
  <summary>
- Avogadro's constant.
+ Avogadro's constant (unit/mol).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Boltzmann">
+ <summary>
+ Boltzmann constant (J/K).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.kB">
+ <summary>
+ Boltzmann constant (J/K).
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.C">
  <summary>
- Light speed constant.
+ Light speed constant (m/s).
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.LightSpeed">
  <summary>
- Light speed constant.
+ Light speed constant (m/s).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.EarthGravitationalForce">
+ <summary>
+ Gravitational force on Earth.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.ElementaryCharge">
@@ -434,14 +469,44 @@ Fire-API.ref
  Elementary charge constant.
  </summary>
 </member>
-<member name="F:Fire_API.ref.Constants.G">
+<member name="F:Fire_API.ref.Constants.Faraday">
  <summary>
- Gravitational constant on Earth.
+ Faraday's constant (C/mol).
  </summary>
 </member>
-<member name="F:Fire_API.ref.Constants.EarthGravitationalForce">
+<member name="F:Fire_API.ref.Constants.G">
  <summary>
- Gravitational constant on Earth.
+ Gravitational constant (N × m² × kg-²).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.GravitationalConstant">
+ <summary>
+ Gravitational constant (N × m² × kg-²).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.PerfectGasses">
+ <summary>
+ Perfect gasses constant (J/(K/mol)).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.Planck">
+ <summary>
+ Planck's constant (J × s)
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.ElectronMass">
+ <summary>
+ Mass of an electron (kg)
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.NeutronMass">
+ <summary>
+ Mass of a neutron (kg)
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.ProtonMass">
+ <summary>
+ Mass of a proton (kg)
  </summary>
 </member>
 <member name="T:Fire_API.ref.EncryptionException">
