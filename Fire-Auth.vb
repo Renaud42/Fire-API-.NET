@@ -2,7 +2,8 @@
 Imports System.Text
 
 Public Class Fire_Auth
-    Public Response As String = ""
+    Private Shared Response As String = ""
+    Private Shared Mumble_Decoded As Object = Decode(Constants.JSON_MUMBLE), Mumble_CVP_Decoded As Object = Decode(Constants.JSON_MUMBLE_CVP), VPS_Decoded As Object = Decode(Constants.JSON_VPS)
 
     ''' <summary>
     ''' Integrated locales.
@@ -37,6 +38,7 @@ Public Class Fire_Auth
         DISK_MAX
         DISK_PERCENT
         DISK_USED
+        MUMBLE_CHANNEL_VIEWER_PROTOCOL
         MUMBLE_ONLINE
         MUMBLE_UPTIME
         MUMBLE_USERS
@@ -55,7 +57,7 @@ Public Class Fire_Auth
     ''' <param name="Email">Do you need e-mail of the user ?</param>
     ''' <param name="Role">Do you need role of the user ?</param>
     ''' <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
-    Public Sub RegisterWithFireAPIWindow(FormLocale As FireLocale, AppAuthorName As String, Theme As FireTheme, Optional Email As Boolean = False, Optional Role As Boolean = False, Optional FireCoins As Boolean = False)
+    Public Shared Sub RegisterWithFireAPIWindow(FormLocale As FireLocale, AppAuthorName As String, Theme As FireTheme, Optional Email As Boolean = False, Optional Role As Boolean = False, Optional FireCoins As Boolean = False)
         Dim FireAuthWindow As New Fire_Auth_Window
 
         FireAuthWindow.ShowDialog()
@@ -65,7 +67,7 @@ Public Class Fire_Auth
         End While
     End Sub
 
-    Public Function RegisterTask(Username As String, Password As String)
+    Public Shared Function RegisterTask(Username As String, Password As String)
 
     End Function
 
@@ -73,10 +75,10 @@ Public Class Fire_Auth
     ''' Return a specified information of the server.
     ''' </summary>
     ''' <param name="InfoType">Type of information needed.</param>
-    Public Function GetServerInformation(InfoType As ServerInfoType)
+    Public Shared Function GetServerInformation(InfoType As ServerInfoType)
         Select Case InfoType
             Case ServerInfoType.CPU_USE_0
-
+                Return VPS_Decoded
         End Select
     End Function
 End Class

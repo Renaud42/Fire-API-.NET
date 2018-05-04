@@ -62,6 +62,21 @@ Fire-API.ref
  Where the requests file of the API is located on Fire-Softwares webserver.
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.JSON_MUMBLE">
+ <summary>
+ JavaScript Object Notation file of the current status of the server.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.JSON_MUMBLE_CVP">
+ <summary>
+ JavaScript Object Notation file of the current status of the server.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.JSON_VPS">
+ <summary>
+ JavaScript Object Notation file of the current status of the server.
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.HTTP_Continue">
  <summary>
  (1xx) Messages with a status line or an header followed by a CRLF line.
@@ -640,6 +655,43 @@ Fire-API.ref
  <param name="baseEncoding">The <see cref="T:System.Text.Encoding"/> of base to use.</param>
  <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
  <param name="password">The password used to encrypt the files.</param>
+</member>
+<member name="T:Fire_API.ref.Fire_Auth.FireLocale">
+ <summary>
+ Integrated locales.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Fire_Auth.FireTheme">
+ <summary>
+ Integrated themes.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Fire_Auth.ServerInfoType">
+ <summary>
+ Type of server info required.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Fire_Auth.FireLocale,System.String,Fire_API.ref.Fire_Auth.FireTheme,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
+ </summary>
+ <param name="FormLocale">Locale of the window.</param>
+ <param name="AppAuthorName">Name of author (can be author, corporation or enterprise).</param>
+ <param name="Theme">Theme of the window.</param>
+ <param name="Email">Do you need e-mail of the user ?</param>
+ <param name="Role">Do you need role of the user ?</param>
+ <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
+</member>
+<member name="M:Fire_API.ref.Fire_Auth.GetServerInformation(Fire_API.ref.Fire_Auth.ServerInfoType)">
+ <summary>
+ Return a specified information of the server.
+ </summary>
+ <param name="InfoType">Type of information needed.</param>
+</member>
+<member name="T:Fire_API.ref.FireJSONParser">
+ <summary>
+ Integrated JavaScript Object Notation decoder.
+ </summary>
 </member>
 <member name="T:Fire_API.ref.FireRichTextBoxPrintable">
  <summary>

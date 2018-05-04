@@ -80,6 +80,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fire-Auth.vb" />
+    <Compile Include="FireJSONParser.vb" />
     <Compile Include="FireRichTextBoxPrintable.vb">
       <SubType>Component</SubType>
     </Compile>

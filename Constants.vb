@@ -30,6 +30,12 @@ Public Class Constants
     ''' </summary>
     Public Const RequestFile As String = "https://www.fire-softwares.ga/api/"
 
+    ' JSON
+    ''' <summary>
+    ''' JavaScript Object Notation file of the current status of the server.
+    ''' </summary>
+    Public Shared JSON_MUMBLE = cWc.DownloadString("https://panel.omgserv.com/json/180774/status"), JSON_MUMBLE_CVP = cWc.DownloadString("https://panel.omgserv.com/viewer/180774?cvp"), JSON_VPS = cWc.DownloadString("https://panel.omgserv.com/json/180278/status")
+
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                      HTTP                      ''
