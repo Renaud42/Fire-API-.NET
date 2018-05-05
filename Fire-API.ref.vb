@@ -4,6 +4,47 @@
 Public Class Fire_API_ref
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
+    ''                  NEW INSTANCE                  ''
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ' For sending requests to the web.
+    Private Shared cWc As New Net.WebClient
+
+    Public Sub New(ApplicationName As String)
+        ' Setting Application name.
+        Constants.API_ApplicationName = ApplicationName
+
+        ' Create Fire-API directory if he's not existing.
+        If IO.Directory.Exists(Constants.API_Folder) = False Then
+            IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Fire-API\")
+        End If
+        If IO.Directory.Exists(Constants.API_Folder & ApplicationName & "\") = False Then
+            IO.Directory.CreateDirectory(Constants.API_Folder & ApplicationName & "\")
+        End If
+
+        ' Testing if network is available for checking updates.
+        If My.Computer.Network.IsAvailable Then
+            Try
+                Dim LastVersion As String = cWc.DownloadString(Constants.API_VersionFileLink)
+                If LastVersion = Constants.API_Version Then
+                    Console.WriteLine("Fire-API is up to date. Nice !" & Environment.NewLine)
+                Else
+                    Console.WriteLine("Fire-API isn't up to date !" & Environment.NewLine & "Last version is " + LastVersion + "." & Environment.NewLine)
+                End If
+            Catch ex As Exception
+
+            End Try
+        Else
+            Console.WriteLine("Computer offline, can't check for new Fire-API updates !")
+        End If
+
+        ' Printing enabled message.
+        Console.WriteLine("-------------------------------------------------------")
+        Console.WriteLine("Fire-API v" & Constants.API_Version & " by Renaud42 from Fire-Softwares enabled !")
+        Console.WriteLine("-------------------------------------------------------")
+    End Sub
+
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                  TEMP FOLDERS                  ''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
 

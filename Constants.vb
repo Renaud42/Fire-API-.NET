@@ -21,6 +21,30 @@ Public Class Constants
 
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
+    ''                    FIRE-API                    ''
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ' Constants
+    ''' <summary>
+    ''' Current version of your API.
+    ''' </summary>
+    Public Const API_Version As String = "1.0"
+    ''' <summary>
+    ''' Link of the web file with the lastest version number.
+    ''' </summary>
+    Public Const API_VersionFileLink As String = "https://fire-softwares.ga/api/version"
+
+    ''' <summary>
+    ''' Name of the application.
+    ''' </summary>
+    Public Shared API_ApplicationName As String
+    ''' <summary>
+    ''' Folder where API data are saved.
+    ''' </summary>
+    Public Shared API_Folder As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Fire-Softwares\Fire-API\"
+
+
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                   FIRE-AUTH                    ''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -29,12 +53,10 @@ Public Class Constants
     ''' Where the requests file of the API is located on Fire-Softwares webserver.
     ''' </summary>
     Public Const RequestFile As String = "https://www.fire-softwares.ga/api/"
-
-    ' JSON
     ''' <summary>
-    ''' JavaScript Object Notation file of the current status of the server.
+    ''' JavaScript Object Notation file URL of the current status of the asked server.
     ''' </summary>
-    Public Shared JSON_MUMBLE = cWc.DownloadString("https://panel.omgserv.com/json/180774/status"), JSON_MUMBLE_CVP = cWc.DownloadString("https://panel.omgserv.com/viewer/180774?cvp"), JSON_VPS = cWc.DownloadString("https://panel.omgserv.com/json/180278/status")
+    Public Const JSON_MUMBLE As String = "https://panel.omgserv.com/json/180774/status", JSON_MUMBLE_CVP As String = "https://panel.omgserv.com/viewer/180774?cvp", JSON_VPS As String = "https://panel.omgserv.com/json/180278/status"
 
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''

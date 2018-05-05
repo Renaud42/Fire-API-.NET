@@ -57,6 +57,26 @@ Fire-API.ref
  Bit true, one, yes, high state
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.API_Version">
+ <summary>
+ Current version of your API.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.API_VersionFileLink">
+ <summary>
+ Link of the web file with the lastest version number.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.API_ApplicationName">
+ <summary>
+ Name of the application.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Constants.API_Folder">
+ <summary>
+ Folder where API data are saved.
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.RequestFile">
  <summary>
  Where the requests file of the API is located on Fire-Softwares webserver.
@@ -64,17 +84,17 @@ Fire-API.ref
 </member>
 <member name="F:Fire_API.ref.Constants.JSON_MUMBLE">
  <summary>
- JavaScript Object Notation file of the current status of the server.
+ JavaScript Object Notation file URL of the current status of the asked server.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.JSON_MUMBLE_CVP">
  <summary>
- JavaScript Object Notation file of the current status of the server.
+ JavaScript Object Notation file URL of the current status of the asked server.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.JSON_VPS">
  <summary>
- JavaScript Object Notation file of the current status of the server.
+ JavaScript Object Notation file URL of the current status of the asked server.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.HTTP_Continue">
@@ -671,12 +691,11 @@ Fire-API.ref
  Type of server info required.
  </summary>
 </member>
-<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Fire_Auth.FireLocale,System.String,Fire_API.ref.Fire_Auth.FireTheme,System.Boolean,System.Boolean,System.Boolean)">
+<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Fire_Auth.FireLocale,Fire_API.ref.Fire_Auth.FireTheme,System.Boolean,System.Boolean,System.Boolean)">
  <summary>
  Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
  </summary>
  <param name="FormLocale">Locale of the window.</param>
- <param name="AppAuthorName">Name of author (can be author, corporation or enterprise).</param>
  <param name="Theme">Theme of the window.</param>
  <param name="Email">Do you need e-mail of the user ?</param>
  <param name="Role">Do you need role of the user ?</param>
@@ -688,9 +707,22 @@ Fire-API.ref
  </summary>
  <param name="InfoType">Type of information needed.</param>
 </member>
-<member name="T:Fire_API.ref.FireJSONParser">
+<member name="M:Fire_API.ref.Fire_Auth.Initialize(Fire_API.ref.Fire_Auth.ServerInfoType,System.Boolean)">
  <summary>
- Integrated JavaScript Object Notation decoder.
+ Initialize one JSON status file.
+ </summary>
+ <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_Auth.ServerInfoType"/> to get file for.</param>
+ <param name="NetworkCheck">Check if an network connection is available else returns an <seealso cref="T:System.Exception"/> with message "Can't connect to the network."</param>
+</member>
+<member name="M:Fire_API.ref.Fire_Auth.InitializationWorker(Fire_API.ref.Fire_Auth.ServerInfoType)">
+ <summary>
+ Initialization worker.
+ </summary>
+ <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_Auth.ServerInfoType"/> to get file for.</param>
+</member>
+<member name="M:Fire_API.ref.Fire_Auth.DestroyTempJSON">
+ <summary>
+ Destroy temp JSON locally created status file.
  </summary>
 </member>
 <member name="T:Fire_API.ref.FireRichTextBoxPrintable">
