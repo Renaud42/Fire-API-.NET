@@ -26,13 +26,13 @@ Public Class Constants
 
     ' Constants
     ''' <summary>
+    ''' Link of the JavaScript Object Notation web file with the informations of the latest version of the Fire-API.
+    ''' </summary>
+    Public Const API_InformationsFile As String = "https://fire-softwares.ga/api/api.json"
+    ''' <summary>
     ''' Current version of your API.
     ''' </summary>
     Public Const API_Version As String = "1.0"
-    ''' <summary>
-    ''' Link of the web file with the lastest version number.
-    ''' </summary>
-    Public Const API_VersionFileLink As String = "https://fire-softwares.ga/api/version"
 
     ''' <summary>
     ''' Name of the application.
@@ -42,6 +42,191 @@ Public Class Constants
     ''' Folder where API data are saved.
     ''' </summary>
     Public Shared API_Folder As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Fire-Softwares\Fire-API\"
+
+    ' Locale utils
+    ''' <summary>
+    ''' Integrated locales.
+    ''' </summary>
+    Public Enum FireLocale
+        Arabian
+        Armenian
+        Chinese
+        English
+        French
+        Hindi
+        Italian
+        Japanese
+        Russian
+        Spanish
+    End Enum
+
+    ''' <summary>
+    ''' Words and sentences to translate.
+    ''' </summary>
+    Public Enum FireTranslations
+        InformationAccessWarning
+        Username
+        Email
+        Role
+        Login
+    End Enum
+
+    ' Sentences
+    Public Shared Function ReturnTranslation(Word As FireTranslations, Locale As FireLocale)
+        If Locale = FireLocale.Arabian Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "صلة"
+                Case FireTranslations.Email
+                    Return "البريد الإلكتروني"
+                Case FireTranslations.InformationAccessWarning
+                    Return "سيكون لدى " & API_ApplicationName & " الوصول إلى المعلومات التالية على حسابك:" & Environment.NewLine & "اسم المستخدم, "
+                Case FireTranslations.Role
+                    Return "(دور (ق"
+                Case FireTranslations.Username
+                    Return "اسم المستخدم"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Armenian Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "Մուտք"
+                Case FireTranslations.Email
+                    Return "Էլեկտրոնային փոստի հասցեն"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & "- ը հասանելի կլինի ձեր հաշվի վերաբերյալ հետեւյալ տեղեկատվությանը :" & Environment.NewLine & "օգտագործողի անունը, "
+                Case FireTranslations.Role
+                    Return "Դ/դերը"
+                Case FireTranslations.Username
+                    Return "օգտագործողի անունը"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Chinese Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "連接"
+                Case FireTranslations.Email
+                    Return "電子郵件地址"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " 將有權訪問您帳戶的以下信息：" & Environment.NewLine & "用戶名, "
+                Case FireTranslations.Role
+                    Return "角色"
+                Case FireTranslations.Username
+                    Return "用戶名"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.English Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "Login"
+                Case FireTranslations.Email
+                    Return "E-mail address"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " will have access following informations on your account :" & Environment.NewLine & "Username, "
+                Case FireTranslations.Role
+                    Return "Role(s)"
+                Case FireTranslations.Username
+                    Return "Username"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.French Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "Connexion"
+                Case FireTranslations.Email
+                    Return "Adresse e-mail"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " va avoir accès aux informations suivantes sur votre compte :" & Environment.NewLine & "Nom d'utilisateur, "
+                Case FireTranslations.Role
+                    Return "Rôle(s)"
+                Case FireTranslations.Username
+                    Return "Nom d'utilisateur"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Hindi Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "में प्रवेश करें"
+                Case FireTranslations.Email
+                    Return "ई-मेल पता"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " के पास आपके खाते के बारे में निम्न जानकारी तक पहुंच होगी :" & Environment.NewLine & "उपयोगकर्ता नाम, "
+                Case FireTranslations.Role
+                    Return "भूमिका (रों)"
+                Case FireTranslations.Username
+                    Return "उपयोगकर्ता नाम"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Italian Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "Login"
+                Case FireTranslations.Email
+                    Return "Indirizzo e-mail"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " avrà accesso alle seguenti informazioni sul tuo account :" & Environment.NewLine & "Nome utente, "
+                Case FireTranslations.Role
+                    Return "Ruolo/i"
+                Case FireTranslations.Username
+                    Return "Nome utente"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Japanese Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "ログイン"
+                Case FireTranslations.Email
+                    Return "電子メールアドレス"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " はあなたのアカウントに関する以下の情報にアクセスします：" & Environment.NewLine & "ユーザー名, "
+                Case FireTranslations.Role
+                    Return "役割"
+                Case FireTranslations.Username
+                    Return "ユーザー名"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Russian Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "Авторизоваться"
+                Case FireTranslations.Email
+                    Return "Адрес электронной почты"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " будет иметь доступ к следующей информации о вашей учетной записи :" & Environment.NewLine & "имя пользователя, "
+                Case FireTranslations.Role
+                    Return "Роль/и"
+                Case FireTranslations.Username
+                    Return "имя пользователя"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        ElseIf Locale = FireLocale.Spanish Then
+            Select Case Word
+                Case FireTranslations.Login
+                    Return "Conectarse"
+                Case FireTranslations.Email
+                    Return "Dirección de correo electrónico"
+                Case FireTranslations.InformationAccessWarning
+                    Return API_ApplicationName & " tendrá acceso a la siguiente información sobre su cuenta :" & Environment.NewLine & "Nombre de usuario, "
+                Case FireTranslations.Role
+                    Return "Rol(es)"
+                Case FireTranslations.Username
+                    Return "Nombre de usuario"
+                Case Else
+                    Throw New Exception("Unknown word/sentence.")
+            End Select
+        Else
+            Throw New Exception("Locale not yet supported.")
+        End If
+    End Function
 
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -56,7 +241,15 @@ Public Class Constants
     ''' <summary>
     ''' JavaScript Object Notation file URL of the current status of the asked server.
     ''' </summary>
-    Public Const JSON_MUMBLE As String = "https://panel.omgserv.com/json/180774/status", JSON_MUMBLE_CVP As String = "https://panel.omgserv.com/viewer/180774?cvp", JSON_VPS As String = "https://panel.omgserv.com/json/180278/status"
+    Public Const JSON_MUMBLE As String = "https://panel.omgserv.com/json/180774/status", JSON_VPS As String = "https://panel.omgserv.com/json/180278/status"
+
+    ''' <summary>
+    ''' Integrated themes.
+    ''' </summary>
+    Public Enum FireTheme
+        Light
+        Dark
+    End Enum
 
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''

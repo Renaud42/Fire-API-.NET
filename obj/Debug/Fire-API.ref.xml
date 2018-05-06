@@ -57,14 +57,14 @@ Fire-API.ref
  Bit true, one, yes, high state
  </summary>
 </member>
+<member name="F:Fire_API.ref.Constants.API_InformationsFile">
+ <summary>
+ Link of the JavaScript Object Notation web file with the informations of the latest version of the Fire-API.
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.API_Version">
  <summary>
  Current version of your API.
- </summary>
-</member>
-<member name="F:Fire_API.ref.Constants.API_VersionFileLink">
- <summary>
- Link of the web file with the lastest version number.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.API_ApplicationName">
@@ -77,6 +77,16 @@ Fire-API.ref
  Folder where API data are saved.
  </summary>
 </member>
+<member name="T:Fire_API.ref.Constants.FireLocale">
+ <summary>
+ Integrated locales.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Constants.FireTranslations">
+ <summary>
+ Words and sentences to translate.
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Constants.RequestFile">
  <summary>
  Where the requests file of the API is located on Fire-Softwares webserver.
@@ -87,14 +97,14 @@ Fire-API.ref
  JavaScript Object Notation file URL of the current status of the asked server.
  </summary>
 </member>
-<member name="F:Fire_API.ref.Constants.JSON_MUMBLE_CVP">
+<member name="F:Fire_API.ref.Constants.JSON_VPS">
  <summary>
  JavaScript Object Notation file URL of the current status of the asked server.
  </summary>
 </member>
-<member name="F:Fire_API.ref.Constants.JSON_VPS">
+<member name="T:Fire_API.ref.Constants.FireTheme">
  <summary>
- JavaScript Object Notation file URL of the current status of the asked server.
+ Integrated themes.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.HTTP_Continue">
@@ -554,6 +564,11 @@ Fire-API.ref
  Definitively best class ever.
  </summary>
 </member>
+<member name="M:Fire_API.ref.Fire_API_ref.DestroyTempJSON">
+ <summary>
+ Destroy temp JSON locally created status file.
+ </summary>
+</member>
 <member name="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm">
  <summary>
  The algorithm of encryption used.
@@ -676,22 +691,12 @@ Fire-API.ref
  <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
  <param name="password">The password used to encrypt the files.</param>
 </member>
-<member name="T:Fire_API.ref.Fire_Auth.FireLocale">
- <summary>
- Integrated locales.
- </summary>
-</member>
-<member name="T:Fire_API.ref.Fire_Auth.FireTheme">
- <summary>
- Integrated themes.
- </summary>
-</member>
 <member name="T:Fire_API.ref.Fire_Auth.ServerInfoType">
  <summary>
  Type of server info required.
  </summary>
 </member>
-<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Fire_Auth.FireLocale,Fire_API.ref.Fire_Auth.FireTheme,System.Boolean,System.Boolean,System.Boolean)">
+<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Constants.FireLocale,Fire_API.ref.Constants.FireTheme,System.Boolean,System.Boolean,System.Boolean)">
  <summary>
  Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
  </summary>
@@ -700,6 +705,21 @@ Fire-API.ref
  <param name="Email">Do you need e-mail of the user ?</param>
  <param name="Role">Do you need role of the user ?</param>
  <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
+</member>
+<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Constants.FireLocale,System.IO.File,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
+ </summary>
+ <param name="FormLocale">Locale of the window.</param>
+ <param name="CustomTheme">Custom theme of the window (see documentation for themes @ https://api.fire-softwares.ga).</param>
+ <param name="Email">Do you need e-mail of the user ?</param>
+ <param name="Role">Do you need role of the user ?</param>
+ <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
+</member>
+<member name="M:Fire_API.ref.Fire_Auth.LocaleWorker(Fire_API.ref.Constants.FireLocale,System.Boolean,System.Boolean,System.Boolean,Fire_API.ref.Fire_Auth_Window)">
+ <summary>
+ Some tasks about locale.
+ </summary>
 </member>
 <member name="M:Fire_API.ref.Fire_Auth.GetServerInformation(Fire_API.ref.Fire_Auth.ServerInfoType)">
  <summary>
@@ -719,11 +739,6 @@ Fire-API.ref
  Initialization worker.
  </summary>
  <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_Auth.ServerInfoType"/> to get file for.</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.DestroyTempJSON">
- <summary>
- Destroy temp JSON locally created status file.
- </summary>
 </member>
 <member name="T:Fire_API.ref.FireRichTextBoxPrintable">
  <summary>

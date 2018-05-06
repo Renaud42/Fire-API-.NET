@@ -4,6 +4,20 @@
 Public Class Fire_API_ref
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
+    ''           JAVASCRIPT OBJECT NOTATION           ''
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+    ''' <summary>
+    ''' Destroy temp JSON locally created status file.
+    ''' </summary>
+    Public Shared Sub DestroyTempJSON()
+        If IO.File.Exists(Constants.API_Folder & Constants.API_ApplicationName & "\temp.json") Then
+            IO.File.Delete(Constants.API_Folder & Constants.API_ApplicationName & "\temp.json")
+        End If
+    End Sub
+
+
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''                  NEW INSTANCE                  ''
     ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -25,11 +39,18 @@ Public Class Fire_API_ref
         ' Testing if network is available for checking updates.
         If My.Computer.Network.IsAvailable Then
             Try
-                Dim LastVersion As String = cWc.DownloadString(Constants.API_VersionFileLink)
-                If LastVersion = Constants.API_Version Then
+                DestroyTempJSON()
+                My.Computer.Network.DownloadFile(Constants.API_InformationsFile, Constants.API_Folder & Constants.API_ApplicationName & "\temp.json")
+
+                Dim jss As New Web.Script.Serialization.JavaScriptSerializer
+                Dim response As Object
+
+                response = jss.DeserializeObject(IO.File.ReadAllText(Constants.API_Folder & Constants.API_ApplicationName & "\temp.json"))
+
+                If response("informations")("version") = Constants.API_Version Then
                     Console.WriteLine("Fire-API is up to date. Nice !" & Environment.NewLine)
                 Else
-                    Console.WriteLine("Fire-API isn't up to date !" & Environment.NewLine & "Last version is " + LastVersion + "." & Environment.NewLine)
+                    Console.WriteLine("Fire-API isn't up to date !" & Environment.NewLine & "Last version is " + response("informations")("version") + "." & Environment.NewLine)
                 End If
             Catch ex As Exception
 
