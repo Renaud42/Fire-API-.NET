@@ -36,7 +36,7 @@ Public Class Fire_API_ref
             IO.Directory.CreateDirectory(Constants.API_Folder & ApplicationName & "\")
         End If
 
-        ' Testing if network is available for checking updates.
+        ' Testing if network is available for checking updates and check maintenance.
         If My.Computer.Network.IsAvailable Then
             Try
                 DestroyTempJSON()
@@ -47,6 +47,10 @@ Public Class Fire_API_ref
 
                 response = jss.DeserializeObject(IO.File.ReadAllText(Constants.API_Folder & Constants.API_ApplicationName & "\temp.json"))
 
+                If response("informations")("online") = False Then
+                    Console.WriteLine("Fire-API is in maintenance, so some function will be bugged, be right back !")
+                End If
+
                 If response("informations")("version") = Constants.API_Version Then
                     Console.WriteLine("Fire-API is up to date. Nice !" & Environment.NewLine)
                 Else
@@ -56,7 +60,7 @@ Public Class Fire_API_ref
 
             End Try
         Else
-            Console.WriteLine("Computer offline, can't check for new Fire-API updates !")
+            Console.WriteLine("Computer offline, can't check for new Fire-API updates or Fire-API maintenance !")
         End If
 
         ' Printing enabled message.

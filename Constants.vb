@@ -246,10 +246,138 @@ Public Class Constants
     ''' <summary>
     ''' Integrated themes.
     ''' </summary>
-    Public Enum FireTheme
+    Public Enum FireAuthTheme
         Light
         Dark
     End Enum
+
+    ''' <summary>
+    ''' Light theme JavaScript Object Notation <seealso cref="String"/>.
+    ''' </summary>
+    Public Const LightTheme As String = "{
+  ""fire-api-theme"": {
+    ""background-color"": {
+      ""form"": {
+        ""red"": 236,
+        ""green"": 240,
+        ""blue"": 241
+      },
+      ""username-box"": {
+        ""red"": 236,
+        ""green"": 240,
+        ""blue"": 241
+      },
+      ""password-box"": {
+        ""red"": 236,
+        ""green"": 240,
+        ""blue"": 241
+      },
+      ""login-button"": {
+        ""red"": 192,
+        ""green"": 57,
+        ""blue"": 43
+      },
+      ""login-button-hover"": {
+        ""red"": 231,
+        ""green"": 76,
+        ""blue"": 60
+      },
+      ""login-button-pressed"": {
+        ""red"": 162,
+        ""green"": 27,
+        ""blue"": 13
+      }
+    },
+    ""font-color"": {
+      ""authorization-warning"": {
+        ""red"": 0,
+        ""green"": 0,
+        ""blue"": 0
+      },
+      ""username-box"": {
+        ""red"": 64,
+        ""green"": 64,
+        ""blue"": 64
+      },
+      ""password-box"": {
+        ""red"": 64,
+        ""green"": 64,
+        ""blue"": 64
+      },
+      ""login-button"": {
+        ""red"": 255,
+        ""green"": 255,
+        ""blue"": 255
+      }
+    },
+    ""version"": ""1.0""
+  }
+}
+"
+
+    ''' <summary>
+    ''' Dark theme JavaScript Object Notation <seealso cref="String"/>.
+    ''' </summary>
+    Public Const DarkTheme As String = "{
+  ""fire-api-theme"": {
+    ""background-color"": {
+      ""form"": {
+        ""red"": 26,
+        ""green"": 26,
+        ""blue"": 26
+      },
+      ""username-box"": {
+        ""red"": 26,
+        ""green"": 26,
+        ""blue"": 26
+      },
+      ""password-box"": {
+        ""red"": 26,
+        ""green"": 26,
+        ""blue"": 26
+      },
+      ""login-button"": {
+        ""red"": 142,
+        ""green"": 68,
+        ""blue"": 173
+      },
+      ""login-button-hover"": {
+        ""red"": 155,
+        ""green"": 89,
+        ""blue"": 182
+      },
+      ""login-button-pressed"": {
+        ""red"": 142,
+        ""green"": 68,
+        ""blue"": 173
+      }
+    },
+    ""font-color"": {
+      ""authorization-warning"": {
+        ""red"": 255,
+        ""green"": 255,
+        ""blue"": 255
+      },
+      ""username-box"": {
+        ""red"": 52,
+        ""green"": 152,
+        ""blue"": 219
+      },
+      ""password-box"": {
+        ""red"": 52,
+        ""green"": 152,
+        ""blue"": 219
+      },
+      ""login-button"": {
+        ""red"": 255,
+        ""green"": 255,
+        ""blue"": 255
+      }
+    },
+    ""version"": ""1.0""
+  }
+}
+"
 
 
     ''''''''''''''''''''''''''''''''''''''''''''''''''''

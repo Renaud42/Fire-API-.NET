@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If LogoPictureBox.Location.Y < 20 Then
+        If LogoPictureBox.Location.Y < -24 Then
             LogoPictureBox.Location = New Drawing.Point(LogoPictureBox.Location.X, LogoPictureBox.Location.Y + 4)
         Else
             If AuthorizationLbl.Location.X < -2 Then

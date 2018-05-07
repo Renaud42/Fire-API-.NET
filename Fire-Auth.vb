@@ -31,10 +31,11 @@
     ''' <param name="Email">Do you need e-mail of the user ?</param>
     ''' <param name="Role">Do you need role of the user ?</param>
     ''' <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
-    Public Overloads Shared Function RegisterWithFireAPIWindow(FormLocale As Constants.FireLocale, Theme As Constants.FireTheme, Optional Email As Boolean = False, Optional Role As Boolean = False, Optional FireCoins As Boolean = False)
+    Public Overloads Shared Function RegisterWithFireAPIWindow(FormLocale As Constants.FireLocale, Theme As Constants.FireAuthTheme, Optional Email As Boolean = False, Optional Role As Boolean = False, Optional FireCoins As Boolean = False)
         Dim FireAuthWindow As New Fire_Auth_Window
 
         LocaleWorker(FormLocale, Email, Role, FireCoins, FireAuthWindow)
+        ThemeWorker(Theme, FireAuthWindow)
 
         FireAuthWindow.ShowDialog()
 
@@ -49,14 +50,15 @@
     ''' Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
     ''' </summary>
     ''' <param name="FormLocale">Locale of the window.</param>
-    ''' <param name="CustomTheme">Custom theme of the window (see documentation for themes @ https://api.fire-softwares.ga).</param>
+    ''' <param name="CustomThemeFileAddress">Custom theme of the window file address (see documentation for themes @ https://api.fire-softwares.ga).</param>
     ''' <param name="Email">Do you need e-mail of the user ?</param>
     ''' <param name="Role">Do you need role of the user ?</param>
     ''' <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
-    Public Overloads Shared Function RegisterWithFireAPIWindow(FormLocale As Constants.FireLocale, CustomTheme As IO.File, Optional Email As Boolean = False, Optional Role As Boolean = False, Optional FireCoins As Boolean = False)
+    Public Overloads Shared Function RegisterWithFireAPIWindow(FormLocale As Constants.FireLocale, CustomThemeFileAddress As String, Optional Email As Boolean = False, Optional Role As Boolean = False, Optional FireCoins As Boolean = False)
         Dim FireAuthWindow As New Fire_Auth_Window
 
         LocaleWorker(FormLocale, Email, Role, FireCoins, FireAuthWindow)
+        ThemeWorker(CustomThemeFileAddress, FireAuthWindow)
 
         FireAuthWindow.ShowDialog()
 
@@ -88,6 +90,59 @@
         FireAuthWindow.AuthorizationLbl.Text = PermissionsString
         FireAuthWindow.UsernameTxtBox.Text = Constants.ReturnTranslation(Constants.FireTranslations.Username, FormLocale)
         FireAuthWindow.LoginButton.Text = Constants.ReturnTranslation(Constants.FireTranslations.Login, FormLocale)
+    End Sub
+
+    ''' <summary>
+    ''' Main task about themes.
+    ''' </summary>
+    ''' <param name="FormTheme">Theme to use.</param>
+    Private Overloads Shared Sub ThemeWorker(FormTheme As Constants.FireAuthTheme, FireAuthWindow As Fire_Auth_Window)
+        Dim jss As New Web.Script.Serialization.JavaScriptSerializer
+        Dim response As Object
+
+        Select Case FormTheme
+            Case Constants.FireAuthTheme.Dark
+                response = jss.DeserializeObject(Constants.DarkTheme)
+            Case Constants.FireAuthTheme.Light
+                response = jss.DeserializeObject(Constants.LightTheme)
+            Case Else
+                Throw New Exception("Unknown theme.")
+        End Select
+
+        ThemeApply(response, FireAuthWindow)
+    End Sub
+
+    ''' <summary>
+    ''' Main task about custom themes.
+    ''' </summary>
+    ''' <param name="FileAddress"><seealso cref="String"/> with the file address.</param>
+    Private Overloads Shared Sub ThemeWorker(FileAddress As String, FireAuthWindow As Fire_Auth_Window)
+        Dim jss As New Web.Script.Serialization.JavaScriptSerializer
+        Dim response As Object
+
+        response = jss.DeserializeObject(IO.File.ReadAllText(FileAddress))
+
+        ThemeApply(response, FireAuthWindow)
+    End Sub
+
+    ''' <summary>
+    ''' Another theme worker.
+    ''' </summary>
+    Private Shared Sub ThemeApply(Response As Object, FireAuthWindow As Fire_Auth_Window)
+        With FireAuthWindow
+            .BackColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("background-color")("form")("red"), Response("fire-api-theme")("background-color")("form")("green"), Response("fire-api-theme")("background-color")("form")("blue"))
+            .UsernameTxtBox.BackColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("background-color")("username-box")("red"), Response("fire-api-theme")("background-color")("username-box")("green"), Response("fire-api-theme")("background-color")("username-box")("blue"))
+            .PassTxtBox.BackColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("background-color")("password-box")("red"), Response("fire-api-theme")("background-color")("password-box")("green"), Response("fire-api-theme")("background-color")("password-box")("blue"))
+            With .LoginButton
+                .BackColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("background-color")("login-button")("red"), Response("fire-api-theme")("background-color")("login-button")("green"), Response("fire-api-theme")("background-color")("login-button")("blue"))
+                .FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("background-color")("login-button-pressed")("red"), Response("fire-api-theme")("background-color")("login-button-pressed")("green"), Response("fire-api-theme")("background-color")("login-button-pressed")("blue"))
+                .FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("background-color")("login-button-hover")("red"), Response("fire-api-theme")("background-color")("login-button-hover")("green"), Response("fire-api-theme")("background-color")("login-button-hover")("blue"))
+                .ForeColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("font-color")("login-button")("red"), Response("fire-api-theme")("font-color")("login-button")("green"), Response("fire-api-theme")("font-color")("login-button")("blue"))
+            End With
+            .AuthorizationLbl.ForeColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("font-color")("authorization-warning")("red"), Response("fire-api-theme")("font-color")("authorization-warning")("green"), Response("fire-api-theme")("font-color")("authorization-warning")("blue"))
+            .UsernameTxtBox.ForeColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("font-color")("username-box")("red"), Response("fire-api-theme")("font-color")("username-box")("green"), Response("fire-api-theme")("font-color")("username-box")("blue"))
+            .PassTxtBox.ForeColor = System.Drawing.Color.FromArgb(Response("fire-api-theme")("font-color")("password-box")("red"), Response("fire-api-theme")("font-color")("password-box")("green"), Response("fire-api-theme")("font-color")("password-box")("blue"))
+        End With
     End Sub
 
     ''' <summary>

@@ -60,10 +60,10 @@ Partial Class Fire_Auth_Window
         '
         'LoginButton
         '
-        Me.LoginButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LoginButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.LoginButton.FlatAppearance.BorderSize = 0
-        Me.LoginButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LoginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LoginButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.LoginButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LoginButton.Font = New System.Drawing.Font("Calibri", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LoginButton.ForeColor = System.Drawing.Color.White
@@ -77,6 +77,7 @@ Partial Class Fire_Auth_Window
         '
         'AuthorizationLbl
         '
+        Me.AuthorizationLbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AuthorizationLbl.Font = New System.Drawing.Font("Calibri Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AuthorizationLbl.Location = New System.Drawing.Point(-352, 152)
         Me.AuthorizationLbl.Name = "AuthorizationLbl"
@@ -88,9 +89,14 @@ Partial Class Fire_Auth_Window
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.Location = New System.Drawing.Point(104, -130)
+        Me.LogoPictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.LogoPictureBox.ErrorImage = Global.Fire_API.ref.My.Resources.Resources.favicon
+        Me.LogoPictureBox.Image = Global.Fire_API.ref.My.Resources.Resources.favicon
+        Me.LogoPictureBox.InitialImage = Global.Fire_API.ref.My.Resources.Resources.favicon
+        Me.LogoPictureBox.Location = New System.Drawing.Point(65, -176)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(128, 128)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(204, 204)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LogoPictureBox.TabIndex = 4
         Me.LogoPictureBox.TabStop = False
         '
@@ -103,12 +109,14 @@ Partial Class Fire_Auth_Window
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(334, 411)
-        Me.Controls.Add(Me.LogoPictureBox)
         Me.Controls.Add(Me.AuthorizationLbl)
         Me.Controls.Add(Me.LoginButton)
         Me.Controls.Add(Me.PassTxtBox)
         Me.Controls.Add(Me.UsernameTxtBox)
+        Me.Controls.Add(Me.LogoPictureBox)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
