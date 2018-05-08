@@ -584,6 +584,30 @@ Fire-API.ref
  Destroy temp JSON locally created status file.
  </summary>
 </member>
+<member name="T:Fire_API.ref.Fire_API_ref.ServerInfoType">
+ <summary>
+ Type of server info required.
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.GetServerInformation(Fire_API.ref.Fire_API_ref.ServerInfoType)">
+ <summary>
+ Return a specified information of the server.
+ </summary>
+ <param name="InfoType">Type of information needed.</param>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.Initialize(Fire_API.ref.Fire_API_ref.ServerInfoType,System.Boolean)">
+ <summary>
+ Initialize one JSON status file.
+ </summary>
+ <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_API_ref.ServerInfoType"/> to get file for.</param>
+ <param name="NetworkCheck">Check if an network connection is available else returns an <seealso cref="T:System.Exception"/> with message "Can't connect to the network."</param>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.InitializationWorker(Fire_API.ref.Fire_API_ref.ServerInfoType)">
+ <summary>
+ Initialization worker.
+ </summary>
+ <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_API_ref.ServerInfoType"/> to get file for.</param>
+</member>
 <member name="T:Fire_API.ref.Fire_API_ref.EncryptionAlgorithm">
  <summary>
  The algorithm of encryption used.
@@ -705,72 +729,6 @@ Fire-API.ref
  <param name="baseEncoding">The <see cref="T:System.Text.Encoding"/> of base to use.</param>
  <param name="WriteMethod">The <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/> to use.</param>
  <param name="password">The password used to encrypt the files.</param>
-</member>
-<member name="T:Fire_API.ref.Fire_Auth.ServerInfoType">
- <summary>
- Type of server info required.
- </summary>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Constants.FireLocale,Fire_API.ref.Constants.FireAuthTheme,System.Boolean,System.Boolean,System.Boolean)">
- <summary>
- Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
- </summary>
- <param name="FormLocale">Locale of the window.</param>
- <param name="Theme">Theme of the window.</param>
- <param name="Email">Do you need e-mail of the user ?</param>
- <param name="Role">Do you need role of the user ?</param>
- <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.RegisterWithFireAPIWindow(Fire_API.ref.Constants.FireLocale,System.String,System.Boolean,System.Boolean,System.Boolean)">
- <summary>
- Spawn a window to connect with Fire-Softwares and get username + other stuff precised in params.
- </summary>
- <param name="FormLocale">Locale of the window.</param>
- <param name="CustomThemeFileAddress">Custom theme of the window file address (see documentation for themes @ https://api.fire-softwares.ga).</param>
- <param name="Email">Do you need e-mail of the user ?</param>
- <param name="Role">Do you need role of the user ?</param>
- <param name="FireCoins">Do you need amount of Fire-Coins of the user ?</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.LocaleWorker(Fire_API.ref.Constants.FireLocale,System.Boolean,System.Boolean,System.Boolean,Fire_API.ref.Fire_Auth_Window)">
- <summary>
- Some tasks about locale.
- </summary>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.ThemeWorker(Fire_API.ref.Constants.FireAuthTheme,Fire_API.ref.Fire_Auth_Window)">
- <summary>
- Main task about themes.
- </summary>
- <param name="FormTheme">Theme to use.</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.ThemeWorker(System.String,Fire_API.ref.Fire_Auth_Window)">
- <summary>
- Main task about custom themes.
- </summary>
- <param name="FileAddress"><seealso cref="T:System.String"/> with the file address.</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.ThemeApply(System.Object,Fire_API.ref.Fire_Auth_Window)">
- <summary>
- Another theme worker.
- </summary>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.GetServerInformation(Fire_API.ref.Fire_Auth.ServerInfoType)">
- <summary>
- Return a specified information of the server.
- </summary>
- <param name="InfoType">Type of information needed.</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.Initialize(Fire_API.ref.Fire_Auth.ServerInfoType,System.Boolean)">
- <summary>
- Initialize one JSON status file.
- </summary>
- <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_Auth.ServerInfoType"/> to get file for.</param>
- <param name="NetworkCheck">Check if an network connection is available else returns an <seealso cref="T:System.Exception"/> with message "Can't connect to the network."</param>
-</member>
-<member name="M:Fire_API.ref.Fire_Auth.InitializationWorker(Fire_API.ref.Fire_Auth.ServerInfoType)">
- <summary>
- Initialization worker.
- </summary>
- <param name="InfoType"><seealso cref="T:Fire_API.ref.Fire_Auth.ServerInfoType"/> to get file for.</param>
 </member>
 <member name="T:Fire_API.ref.FireRichTextBoxPrintable">
  <summary>
