@@ -82,21 +82,6 @@ Fire-API.ref
  Folder where API data are saved.
  </summary>
 </member>
-<member name="T:Fire_API.ref.Constants.FireLocale">
- <summary>
- Integrated locales.
- </summary>
-</member>
-<member name="T:Fire_API.ref.Constants.FireTranslations">
- <summary>
- Words and sentences to translate.
- </summary>
-</member>
-<member name="F:Fire_API.ref.Constants.RequestFile">
- <summary>
- Where the requests file of the API is located on Fire-Softwares webserver.
- </summary>
-</member>
 <member name="F:Fire_API.ref.Constants.JSON_MUMBLE">
  <summary>
  JavaScript Object Notation file URL of the current status of the asked server.
@@ -105,21 +90,6 @@ Fire-API.ref
 <member name="F:Fire_API.ref.Constants.JSON_VPS">
  <summary>
  JavaScript Object Notation file URL of the current status of the asked server.
- </summary>
-</member>
-<member name="T:Fire_API.ref.Constants.FireAuthTheme">
- <summary>
- Integrated themes.
- </summary>
-</member>
-<member name="F:Fire_API.ref.Constants.LightTheme">
- <summary>
- Light theme JavaScript Object Notation <seealso cref="T:System.String"/>.
- </summary>
-</member>
-<member name="F:Fire_API.ref.Constants.DarkTheme">
- <summary>
- Dark theme JavaScript Object Notation <seealso cref="T:System.String"/>.
  </summary>
 </member>
 <member name="F:Fire_API.ref.Constants.HTTP_Continue">
@@ -637,7 +607,7 @@ Fire-API.ref
 </member>
 <member name="M:Fire_API.ref.Fire_API_ref.GenerateAllTemp(System.Collections.Generic.List{Fire_API.ref.TempObject},Fire_API.ref.Fire_API_ref.WriteMethod)">
  <summary>
- Generate/regenerate the temp folder/file by giving the <see cref="T:System.Collections.Generic.List`1"/> and optionally the <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/>.
+ Generate/regenerate the temp folder/file list by giving the <see cref="T:System.Collections.Generic.List`1"/> and optionally the <see cref="T:Fire_API.ref.Fire_API_ref.WriteMethod"/>.
  </summary>
  <param name="TempList">The List(Of TempObject) to generate.</param>
  <param name="method">The method to use if the file/folder already exists.</param>
