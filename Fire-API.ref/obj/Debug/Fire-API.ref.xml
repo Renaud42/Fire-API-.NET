@@ -1,0 +1,442 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Fire-API.ref
+</name>
+</assembly>
+<members>
+<member name="T:Fire_API.ref.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Fire_API.ref.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Fire_API.ref.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Fire_API.ref.Encryption">
+ <summary>
+ Encryption-related constants
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Encryption.HashingAlgorithm">
+ <summary>
+ Cryptographic hash algorithms
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.HashingAlgorithm.MD5">
+ <summary>
+ Message Digest 5 ; 128-bit output - 64 rounds
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.HashingAlgorithm.SHA1">
+ <summary>
+ Secure Hash Algorithm ; 160-bit output - 80 rounds
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.HashingAlgorithm.SHA256">
+ <summary>
+ Secure Hash Algorithm 256-bit ; 256-bit output - 64 rounds
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.HashingAlgorithm.SHA384">
+ <summary>
+ SHA384 : Secure Hash Algorithm 384-bit ; 384-bit output - 80 rounds
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.HashingAlgorithm.SHA512">
+ <summary>
+ SHA512 : Secure Hash Algorithm 512-bit ; 512-bit output - 80 rounds
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Encryption.EncryptionType">
+ <summary>
+ Type of file encryption
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.EncryptionType.FILE_CONTENT">
+ <summary>
+ Only file content
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.EncryptionType.FILE_NAME">
+ <summary>
+ Only file name
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Encryption.EncryptionType.BOTH">
+ <summary>
+ File content and file name
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Messages">
+ <summary>
+ All Fire-API messages
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.ENCRYPTION_EXCEPTION">
+ <summary>
+ Message returned by an <seealso cref="T:Fire_API.ref.EncryptionException"/>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.NETWORK_UNAVAILABLE_EXCEPTION">
+ <summary>
+ Message returned by a <seealso cref="T:Fire_API.ref.NetworkUnavailableException"/>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.UNKNOWN_SERVER_EXCEPTION">
+ <summary>
+ Message returned by an <seealso cref="T:Fire_API.ref.UnknownServerException"/>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.UPDATE_CHECK_EXCEPTION">
+ <summary>
+ Message returned when can't check for updates
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.WRONG_SERVER_INFO_TYPE_EXCEPTION">
+ <summary>
+ Message returned by a <seealso cref="T:Fire_API.ref.WrongServerInfoTypeException"/>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.API_PREFIX">
+ <summary>
+ Fire-API logs regular prefix
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.API_ERROR_PREFIX">
+ <summary>
+ Fire-API logs error prefix
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.API_WARNING_PREFIX">
+ <summary>
+ Fire-API logs warning prefix
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.API_HELLO">
+ <summary>
+ Message shown when Fire-API is successfully loaded with main class initilization
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.API_UP_TO_DATE">
+ <summary>
+ Message shown when your Fire-API version is the lastest stable
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.API_UPDATE_AVAILABLE">
+ <summary>
+ Message shown when a Fire-API update is available
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Server">
+ <summary>
+ Server-related constants
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Server.ServerName">
+ <summary>
+ Server names
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.FIRE_SOFTWARES">
+ <summary>
+ Fire-Softwares server
+ <para>Fire-Softwares identifier : #0</para>
+ <para>Hostname : firesoftwares</para>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.FIRE_NETWORK">
+ <summary>
+ Fire-Network server
+ <para>Fire-Softwares identifier : #1</para>
+ <para>Hostname : firenetwork</para>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.MUMBLE">
+ <summary>
+ Fire-Softwares / Fire-Network Mumble server
+ <para>Fire-Softwares identifier : #2</para>
+ <para>Host : mumble08</para>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.MUMBLE_CVP">
+ <summary>
+ Mumble Channel Viewer Protocol
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.DISCORD">
+ <summary>
+ Discord status
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.FRAMEWORK_STATUS">
+ <summary>
+ Fire-API Web-Framework status
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.ServerName.API_STATUS">
+ <summary>
+ Fire-API status
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Server.ServerInfoType">
+ <summary>
+ Type of server info required
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_0">
+ <summary>
+ Server #0 status file URL
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_1">
+ <summary>
+ Server #1 status file URL
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_2">
+ <summary>
+ Server #2 status file URL
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_API">
+ <summary>
+ Fire-API status file URL
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_DISCORD">
+ <summary>
+ Discord status file URL
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_FRAMEWORK">
+ <summary>
+ Fire-API Web-Framework status file URL
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Server.STATUS_MUMBLE_CVP">
+ <summary>
+ Mumble Channel Viewer Protocol URL
+ </summary>
+</member>
+<member name="T:Fire_API.ref.PrintableRichTextBox">
+ <summary>
+ Printable RichTextBox control
+ </summary>
+</member>
+<member name="M:Fire_API.ref.PrintableRichTextBox.Print(System.Int32,System.Int32,System.Drawing.Printing.PrintPageEventArgs)">
+ <summary>
+ Render the contents of the PrintableRichTextBox for printing
+ Returns the last character printed + 1 (printing start from this point for next page)
+ </summary>
+ <param name="charFrom">The first character to print position.</param>
+ <param name="charTo">The last character to print position.</param>
+ <param name="e">The <see cref="T:System.Drawing.Printing.PrintPageEventArgs"/> event.</param>
+</member>
+<member name="T:Fire_API.ref.NetworkUnavailableException">
+ <summary>
+ Represents an error which throws when trying to use network when unavailable
+ </summary>
+</member>
+<member name="T:Fire_API.ref.WrongServerInfoTypeException">
+ <summary>
+ Represents an error which throws when a wrong <seealso cref="T:Fire_API.ref.Server.ServerInfoType"/> is specified
+ </summary>
+</member>
+<member name="T:Fire_API.ref.UnknownServerException">
+ <summary>
+ Represents an error which throws when trying to use a wrong <seealso cref="T:Fire_API.ref.Server.ServerName"/>
+ </summary>
+</member>
+<member name="T:Fire_API.ref.EncryptionException">
+ <summary>
+ Represents an error which throws when the encryption algorithm is not supported
+ </summary>
+</member>
+<member name="T:Fire_API.ref.Fire_API_ref">
+ <summary>
+ Definitively best class ever.
+ <para>Initialization : <code>Dim fireAPI As New Fire_API_ref</code>
+ (useful for updates checking at startup)</para>
+ 
+ <para>© 2019 Fire-Softwares, www.fire-softwares.ga</para>
+ <para>Requirement : .NET Framework 4.5.2+</para>
+ <para>Usage : Browse documentation at https://api.fire-softwares.ga/dotnet
+ or browse classes at https://github.com/Fire-Softwares/Fire-API-.NET</para>
+ <para>Author : Fire-Softwares</para>
+ <para>Version : 1.1</para>
+ <para>Date : 2019-12-11</para>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Fire_API_ref.API_VERSION">
+ <summary>
+ Current version of your API.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Fire_API_ref.API_UPDATE_PAGE">
+ <summary>
+ Fire-API update page URL
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Fire_API_ref.CheckForUpdates">
+ <summary>
+ Updates check method
+ </summary>
+</member>
+<member name="T:Fire_API.ref.ExtraFile">
+ <summary>
+ <seealso cref="T:Fire_API.ref.ExtraFile"/> class defines extra-functions for files/directorys
+ </summary>
+</member>
+<member name="M:Fire_API.ref.ExtraFile.EncryptFileWithTripleDES(System.String,Fire_API.ref.Encryption.HashingAlgorithm,Fire_API.ref.Encryption.EncryptionType,System.Text.Encoding,System.String)">
+ <summary>
+ Encrypt a file
+ <para>
+ WARNING : The encryption works with TripleDES (see <see cref="T:Fire_API.ref.TripleDES"/> class) combined with the <see cref="T:Fire_API.ref.Encryption.HashingAlgorithm"/> that you choose.
+ When encrypt a file name with this method, the "/" characters of the hash will be automatically replaced with "," because Windows doesn't accept file names with "/".
+ </para>
+ </summary>
+ <param name="filePath">Path to the file</param>
+ <param name="hashingalgorithm">Hashing algorithm used to encrypt file</param>
+ <param name="enctype">Encryption type used (file content, file name, both)</param>
+ <param name="encoding">File encoding (default, use <seealso cref="P:System.Text.Encoding.Default"/>)</param>
+ <param name="password">TripleDES encryption password</param>
+</member>
+<member name="M:Fire_API.ref.ExtraFile.DecryptFileWithTripleDES(System.String,Fire_API.ref.Encryption.HashingAlgorithm,Fire_API.ref.Encryption.EncryptionType,System.Text.Encoding,System.String)">
+ <summary>
+ Decrypt a file
+ <para>
+ WARNING : The encryption works with TripleDES (see <see cref="T:Fire_API.ref.TripleDES"/> class) combined with the <see cref="T:Fire_API.ref.Encryption.HashingAlgorithm"/> that you choose.
+ When decrypt a file name with this method, the "," characters of the hash will be automatically restored with "/" because Windows doesn't accept file names with "/".
+ </para>
+ </summary>
+ <param name="filePath">Path to the file</param>
+ <param name="hashingalgorithm">Hashing algorithm used to encrypt file</param>
+ <param name="enctype">Encryption type used (file content, file name, both)</param>
+ <param name="encoding">File encoding (default, use <seealso cref="P:System.Text.Encoding.Default"/>)</param>
+ <param name="password">TripleDES encryption password</param>
+</member>
+<member name="T:Fire_API.ref.API">
+ <summary>
+ Make requests to Fire-API and get response with this class.
+ <para>You need to create an instance of this class with something like : <code>Dim wrapper = new API()</code></para>
+ </summary>
+</member>
+<member name="M:Fire_API.ref.API.GetServerInformation(Fire_API.ref.Server.ServerName,Fire_API.ref.Server.ServerInfoType,System.Boolean)">
+ <summary>
+ Returns a specified information of the specified server
+ <para>Note 1 : It's highly recommended to perform this operation in a
+ <seealso cref="T:System.ComponentModel.BackgroundWorker"/> because this function
+ performs lengthy operations (depends on your connection, server
+ connection and computer components) so it could make your program
+ freeze.</para>
+ <para>Note 2 : To prevent refreshing each time you need an information
+ (it can be very long), you can set refreshfile param to False to cancel
+ refreshing and use last file downloaded to parse information (PS : if you
+ request fastly 2 different documents, don't forget to give a little pause
+ to your program after first file refresh, OR you can use another
+ instance of API class too and then there is no conflict).</para>
+ </summary>
+ <param name="name">The server that you want information about</param>
+ <param name="infotype">Type of information needed</param>
+</member>
+<member name="M:Fire_API.ref.API.GetServerStatusURL(Fire_API.ref.Server.ServerName)">
+ <summary>
+ Get status URL corresponding to a server name
+ </summary>
+ <param name="name"><seealso cref="T:Fire_API.ref.Server.ServerName"/> to get status URL</param>
+ <returns></returns>
+</member>
+<member name="T:Fire_API.ref.RC4">
+ <summary>
+ Advanced custom integrated RC4 class
+ <para>BETA WIP : decrypt not working for now, but is Work In Progress, so
+ don't try to use it</para>
+ </summary>
+</member>
+<member name="M:Fire_API.ref.RC4.EncryptData(System.String,System.String)">
+ <summary>
+ Function to encrypt data
+ </summary>
+ <param name="plaintext">Text to encrypt</param>
+ <param name="password">The password</param>
+</member>
+<member name="M:Fire_API.ref.RC4.DecryptData(System.String,System.String)">
+ <summary>
+ Function to decrypt data
+ </summary>
+ <param name="encryptedtext">Text to decrypt</param>
+ <param name="password">The password</param>
+</member>
+<member name="M:Fire_API.ref.RC4.Initialize(System.Object,System.Object@,System.Object@)">
+ <summary>
+ Internal function to initilize RC4
+ </summary>
+ <param name="password">The password</param>
+ <param name="key">The key</param>
+ <param name="sbox">The sbox</param>
+</member>
+<member name="T:Fire_API.ref.TripleDES">
+ <summary>
+ Advanced custom integrated TripleDES class
+ <para>Initialization : </para>
+ <para><code>Dim wrapper As New Simple3Des(password, hashingalgorithm)</code></para>
+ <para>Encrypt text :</para>
+ <para><code>Dim encryptedText As String = wrapper.EncryptData(string)</code></para>
+ <para>Decrypt text :</para>
+ <para><code>Dim decryptedText As String = wrapper.DecryptData(encryptedString)</code></para>
+ </summary>
+</member>
+<member name="M:Fire_API.ref.TripleDES.TruncateHash(System.String,System.Int32,Fire_API.ref.Encryption.HashingAlgorithm)">
+ <summary>
+ Function to truncate hash with the key/password, the length and the selected encryption algorithm.
+ </summary>
+ <param name="key">Key/password to encrypt the text</param>
+ <param name="length">Chain length</param>
+ <param name="hashingalgorithm">Encryption algorithm to encrypt the text</param>
+ <returns>Truncated with corresponding hashing algorithm hash</returns>
+</member>
+<member name="M:Fire_API.ref.TripleDES.#ctor(System.String,Fire_API.ref.Encryption.HashingAlgorithm)">
+ <summary>
+ Creates new TripleDES wrapper
+ </summary>
+ <param name="key">The password</param>
+ <param name="hashingalgorithm">The hashing algorithm to use</param>
+</member>
+<member name="M:Fire_API.ref.TripleDES.EncryptData(System.String)">
+ <summary>
+ Function to encrypt data
+ </summary>
+ <param name="plaintext">Text to encrypt</param>
+ <returns>Text encrypted</returns>
+</member>
+<member name="M:Fire_API.ref.TripleDES.DecryptData(System.String)">
+ <summary>
+ Function to decrypt data
+ </summary>
+ <param name="encryptedtext">Hash to decrypt</param>
+ <returns>Text decrypted</returns>
+</member>
+<member name="T:Fire_API.ref.Requests">
+ <summary>
+ Some useful stuff about requests
+ </summary>
+</member>
+<member name="M:Fire_API.ref.Requests.GetWebFileContent(System.String)">
+ <summary>
+ Get a Web file content
+ </summary>
+ <param name="URL">URL to the file</param>
+ <returns>Content of file</returns>
+</member>
+</members>
+</doc>
