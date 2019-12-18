@@ -69,12 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Encryption.vb" />
+    <Compile Include="Constants\MathConstants.vb" />
     <Compile Include="Constants\Messages.vb" />
+    <Compile Include="Constants\PhysChemConstants.vb" />
     <Compile Include="Constants\Server.vb" />
     <Compile Include="Controls\Printing\PrintableRichTextBox.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Exceptions\NetworkUnavailableException.vb" />
+    <Compile Include="Exceptions\UnknownDatabaseException.vb" />
     <Compile Include="Exceptions\WrongServerInfoTypeException.vb" />
     <Compile Include="Exceptions\UnknownServerException.vb" />
     <Compile Include="Exceptions\EncryptionException.vb" />

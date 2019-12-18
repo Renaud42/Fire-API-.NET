@@ -77,6 +77,176 @@ Fire-API.ref
  File content and file name
  </summary>
 </member>
+<member name="T:Fire_API.ref.MathConstants">
+ <summary>
+ Constants used in math
+ <para>You might need to create an instance of this class with something like : <code>Dim wrapper As new MathConstants()</code></para>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.PI">
+ <summary>
+ π constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.PI_100000">
+ <summary>
+ π constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.E">
+ <summary>
+ Euler constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.EULER">
+ <summary>
+ Euler constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.E_10000">
+ <summary>
+ Euler constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.CHAMPERNOWNE">
+ <summary>
+ Champernowne's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.C10">
+ <summary>
+ Champernowne's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.C10_100000">
+ <summary>
+ Champernowne's constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.GOLD_NUMBER">
+ <summary>
+ Gold number constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.GOD_NUMBER">
+ <summary>
+ Gold number constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.GOLD_SECTION">
+ <summary>
+ Gold number constant.
+ </summary>
+</member>
+<member name="T:Fire_API.ref.MathConstants.PiDB">
+ <summary>
+ π digits database enum
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.PiDB.CableNewsNetwork">
+ <summary>
+ CableNewsNetwork (https://edition.cnn.com/2017/03/13/health/pi-digits-trnd/index.html), max = 10000 digits, protocol = HTTPS
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.PiDB.MIT">
+ <summary>
+ MIT (https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt), max = 1000000000 digits, protocol = HTTPS
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.PiDB.Utah">
+ <summary>
+ Utah (https://www.math.utah.edu/~pa/math/pi.html), max = 9999 digits, protocol = HTTPS
+ </summary>
+</member>
+<member name="T:Fire_API.ref.MathConstants.EulerDB">
+ <summary>
+ e digits database enum
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.EulerDB.MacTutorHistory">
+ <summary>
+ MacTutorHistory (http://www-history.mcs.st-and.ac.uk/HistTopics/e_10000.html), max = 9999 digits, protocol = HTTP
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.EulerDB.NASA">
+ <summary>
+ NASA (https://apod.nasa.gov/htmltest/gifcity/e.5mil), max = 5000157 digits, protocol = HTTPS
+ </summary>
+</member>
+<member name="F:Fire_API.ref.MathConstants.EulerDB.Utah">
+ <summary>
+ Utah (https://www.math.utah.edu/~pa/math/e.html), max = 9999 digits, protocol = HTTPS
+ </summary>
+</member>
+<member name="M:Fire_API.ref.MathConstants.GetPiString(System.Int64)">
+ <summary>
+ Get π String with specified digits
+ </summary>
+ <param name="digits">Number of digits (max = 99999).</param>
+</member>
+<member name="M:Fire_API.ref.MathConstants.GetEString(System.Int64)">
+ <summary>
+ Get e String with specified digits.
+ </summary>
+ <param name="digits">Number of digits (max = 9999).</param>
+</member>
+<member name="M:Fire_API.ref.MathConstants.GetC10String(System.Int64)">
+ <summary>
+ Get C10 String with specified digits.
+ </summary>
+ <param name="digits">Number of digits (max = 99999).</param>
+</member>
+<member name="M:Fire_API.ref.MathConstants.GetPiFromDatabase(System.Int64,Fire_API.ref.MathConstants.PiDB,System.Boolean,System.Boolean)">
+ <summary>
+ Get π String from a specified database
+ <para>Note 1 : It's highly recommended to perform this operation in a
+ <seealso cref="T:System.ComponentModel.BackgroundWorker"/> because this function
+ performs lengthy operations (depends on your connection, server
+ connection and computer components) so it could make your program
+ freeze.</para>
+ <para>Note 2 : To prevent refreshing each time you need an information
+ (it can be very long), you can set refreshfile param to False to cancel
+ refreshing and use last file downloaded to parse information (PS : if you
+ request fastly 2 different documents, don't forget to give a little pause
+ to your program after first file refresh, OR you can use another
+ instance of <seealso cref="T:Fire_API.ref.MathConstants"/> class too and then there is no conflict).</para>
+ </summary>
+ <param name="digits">Number of digits to download (max depends on database used)</param>
+ <param name="database">Database used to find constant</param>
+ <param name="refreshfile">Do the function need to refresh the file (default = True)</param>
+ <param name="caching">Allow/disallow caching (default = True/allowed) (disabling cache will reduce memory usage of your program but you will need to refresh page each time you need information on it)</param>
+ <returns>π String from database</returns>
+</member>
+<member name="M:Fire_API.ref.MathConstants.GetEFromDatabase(System.Int64,Fire_API.ref.MathConstants.EulerDB,System.Boolean,System.Boolean)">
+ <summary>
+ Get e String from a specified database
+ <para>Note 1 : It's highly recommended to perform this operation in a
+ <seealso cref="T:System.ComponentModel.BackgroundWorker"/> because this function
+ performs lengthy operations (depends on your connection, server
+ connection and computer components) so it could make your program
+ freeze.</para>
+ <para>Note 2 : To prevent refreshing each time you need an information
+ (it can be very long), you can set refreshfile param to False to cancel
+ refreshing and use last file downloaded to parse information (PS : if you
+ request fastly 2 different documents, don't forget to give a little pause
+ to your program after first file refresh, OR you can use another
+ instance of <seealso cref="T:Fire_API.ref.MathConstants"/> class too and then there is no conflict).</para>
+ </summary>
+ <param name="digits">Number of digits to download (max depends on database used)</param>
+ <param name="database">Database used to find constant</param>
+ <param name="refreshfile">Do the function need to refresh the file (default = True)</param>
+ <param name="caching">Allow/disallow caching (default = True/allowed) (disabling cache will reduce memory usage of your program but you will need to refresh page each time you need information on it)</param>
+ <returns>e String from database</returns>
+</member>
+<member name="M:Fire_API.ref.MathConstants.ExtractConstantFromDocument(System.String,System.Int32,System.Int32)">
+ <summary>
+ Function used to "extract" only the constant from a formatted document
+ </summary>
+ <param name="data">Data from website</param>
+ <param name="offset">Offset where starts the constant</param>
+ <param name="digits">Digits of constant</param>
+ <returns></returns>
+</member>
 <member name="T:Fire_API.ref.Messages">
  <summary>
  All Fire-API messages
@@ -90,6 +260,11 @@ Fire-API.ref
 <member name="F:Fire_API.ref.Messages.NETWORK_UNAVAILABLE_EXCEPTION">
  <summary>
  Message returned by a <seealso cref="T:Fire_API.ref.NetworkUnavailableException"/>
+ </summary>
+</member>
+<member name="F:Fire_API.ref.Messages.UNKNOWN_DATABASE_EXCEPTION">
+ <summary>
+ Message returned by a <seealso cref="T:Fire_API.ref.UnknownDatabaseException"/>
  </summary>
 </member>
 <member name="F:Fire_API.ref.Messages.UNKNOWN_SERVER_EXCEPTION">
@@ -247,6 +422,11 @@ Fire-API.ref
  Represents an error which throws when trying to use network when unavailable
  </summary>
 </member>
+<member name="T:Fire_API.ref.UnknownDatabaseException">
+ <summary>
+ Represents an error which throws when trying to use a wrong database
+ </summary>
+</member>
 <member name="T:Fire_API.ref.WrongServerInfoTypeException">
  <summary>
  Represents an error which throws when a wrong <seealso cref="T:Fire_API.ref.Server.ServerInfoType"/> is specified
@@ -287,7 +467,7 @@ Fire-API.ref
  Fire-API update page URL
  </summary>
 </member>
-<member name="M:Fire_API.ref.Fire_API_ref.CheckForUpdates">
+<member name="M:Fire_API.ref.Fire_API_ref.UpdatesCheck">
  <summary>
  Updates check method
  </summary>
@@ -328,7 +508,7 @@ Fire-API.ref
 <member name="T:Fire_API.ref.API">
  <summary>
  Make requests to Fire-API and get response with this class.
- <para>You need to create an instance of this class with something like : <code>Dim wrapper = new API()</code></para>
+ <para>You need to create an instance of this class with something like : <code>Dim wrapper As new API()</code></para>
  </summary>
 </member>
 <member name="M:Fire_API.ref.API.GetServerInformation(Fire_API.ref.Server.ServerName,Fire_API.ref.Server.ServerInfoType,System.Boolean)">
@@ -344,7 +524,7 @@ Fire-API.ref
  refreshing and use last file downloaded to parse information (PS : if you
  request fastly 2 different documents, don't forget to give a little pause
  to your program after first file refresh, OR you can use another
- instance of API class too and then there is no conflict).</para>
+ instance of <seealso cref="T:Fire_API.ref.API"/> class too and then there is no conflict).</para>
  </summary>
  <param name="name">The server that you want information about</param>
  <param name="infotype">Type of information needed</param>
@@ -425,6 +605,11 @@ Fire-API.ref
  </summary>
  <param name="encryptedtext">Hash to decrypt</param>
  <returns>Text decrypted</returns>
+</member>
+<member name="T:Fire_API.ref.Compute">
+ <summary>
+ Computations algorithm are implemented in this class
+ </summary>
 </member>
 <member name="T:Fire_API.ref.Requests">
  <summary>

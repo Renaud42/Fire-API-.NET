@@ -699,7 +699,8 @@ Public Class Fire_API_ref
     ' Constructor
     Public Sub New()
         MyBase.New()
-        Dim updateThread As New Threading.Thread(AddressOf CheckForUpdates)
+        ' Creating new Thread to check updates
+        Dim updateThread As New Threading.Thread(AddressOf UpdatesCheck)
         updateThread.IsBackground = True
         updateThread.Start()
     End Sub
@@ -707,7 +708,7 @@ Public Class Fire_API_ref
     ''' <summary>
     ''' Updates check method
     ''' </summary>
-    Private Sub CheckForUpdates()
+    Private Sub UpdatesCheck()
         Try
             Dim updater As New API()
             If updater.GetServerInformation(Server.ServerName.FIRE_SOFTWARES, Server.ServerInfoType.ONLINE) Then
@@ -724,7 +725,6 @@ Public Class Fire_API_ref
             Console.WriteLine(Messages.API_ERROR_PREFIX + " " + Messages.UPDATE_CHECK_EXCEPTION)
             Console.WriteLine(Messages.API_ERROR_PREFIX + " " + ex.Message)
         End Try
-        Console.WriteLine()
-        Console.WriteLine(Messages.API_PREFIX + " " + Messages.API_HELLO.Replace("%api-version%", API_VERSION))
+        Console.WriteLine(Environment.NewLine + Messages.API_PREFIX + " " + Messages.API_HELLO.Replace("%api-version%", API_VERSION))
     End Sub
 End Class

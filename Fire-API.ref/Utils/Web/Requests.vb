@@ -4,7 +4,6 @@
 ''' Some useful stuff about requests
 ''' </summary>
 Public Class Requests
-
     ''' <summary>
     ''' Get a Web file content
     ''' </summary>
@@ -23,5 +22,4 @@ Public Class Requests
             End Using
         End Using
     End Function
-
 End Class

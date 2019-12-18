@@ -2,7 +2,7 @@
 
 ''' <summary>
 ''' Make requests to Fire-API and get response with this class.
-''' <para>You need to create an instance of this class with something like : <code>Dim wrapper = new API()</code></para>
+''' <para>You need to create an instance of this class with something like : <code>Dim wrapper As new API()</code></para>
 ''' </summary>
 Public Class API
     ' Variables
@@ -27,7 +27,7 @@ Public Class API
     ''' refreshing and use last file downloaded to parse information (PS : if you
     ''' request fastly 2 different documents, don't forget to give a little pause
     ''' to your program after first file refresh, OR you can use another
-    ''' instance of API class too and then there is no conflict).</para>
+    ''' instance of <seealso cref="API"/> class too and then there is no conflict).</para>
     ''' </summary>
     ''' <param name="name">The server that you want information about</param>
     ''' <param name="infotype">Type of information needed</param>

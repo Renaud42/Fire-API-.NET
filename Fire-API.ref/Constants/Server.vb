@@ -5,7 +5,6 @@ Public Class Server
     ' -------------------------------------------
     ' ENUMS
     ' -------------------------------------------
-
     ''' <summary>
     ''' Server names
     ''' </summary>
@@ -76,11 +75,9 @@ Public Class Server
         VERSION
     End Enum
 
-
     ' -------------------------------------------
     ' CONSTANTS
     ' -------------------------------------------
-
     ''' <summary>
     ''' Server #0 status file URL
     ''' </summary>

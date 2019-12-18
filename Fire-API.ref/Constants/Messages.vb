@@ -14,6 +14,10 @@ Public Class Messages
     ''' </summary>
     Public Const NETWORK_UNAVAILABLE_EXCEPTION = "Network unavailable."
     ''' <summary>
+    ''' Message returned by a <seealso cref="UnknownDatabaseException"/>
+    ''' </summary>
+    Public Const UNKNOWN_DATABASE_EXCEPTION = "Unknown database ""%database%""."
+    ''' <summary>
     ''' Message returned by an <seealso cref="UnknownServerException"/>
     ''' </summary>
     Public Const UNKNOWN_SERVER_EXCEPTION = "Unknown server name."
