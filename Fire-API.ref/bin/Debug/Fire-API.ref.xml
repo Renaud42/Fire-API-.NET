@@ -312,6 +312,86 @@ Fire-API.ref
  Message shown when a Fire-API update is available
  </summary>
 </member>
+<member name="T:Fire_API.ref.PhysChemConstants">
+ <summary>
+ Physics and chemical related constants
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.AVOGADRO">
+ <summary>
+ Avogadro's constant (unit/mol).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.BOLTZMANN">
+ <summary>
+ Boltzmann constant (J/K).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.kB">
+ <summary>
+ Boltzmann constant (J/K).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.C">
+ <summary>
+ Light speed constant (m/s).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.LIGHT_SPEED">
+ <summary>
+ Light speed constant (m/s).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.EARTH_GRAVITATIONAL_FORCE">
+ <summary>
+ Gravitational force on Earth.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.ELEMENTARY_CHARGE">
+ <summary>
+ Elementary charge constant.
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.FARADAY">
+ <summary>
+ Faraday's constant (C/mol).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.G">
+ <summary>
+ Gravitational constant (N × m² × kg-²).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.GRAVITATIONAL_CONSTANT">
+ <summary>
+ Gravitational constant (N × m² × kg-²).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.PERFECT_GASSES">
+ <summary>
+ Perfect gasses constant (J/(K/mol)).
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.PLANCK">
+ <summary>
+ Planck's constant (J × s)
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.ELECTRON_MASS">
+ <summary>
+ Mass of an electron (kg)
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.NEUTRON_MASS">
+ <summary>
+ Mass of a neutron (kg)
+ </summary>
+</member>
+<member name="F:Fire_API.ref.PhysChemConstants.PROTON_MASS">
+ <summary>
+ Mass of a proton (kg)
+ </summary>
+</member>
 <member name="T:Fire_API.ref.Server">
  <summary>
  Server-related constants
@@ -610,6 +690,18 @@ Fire-API.ref
  <summary>
  Computations algorithm are implemented in this class
  </summary>
+</member>
+<member name="M:Fire_API.ref.Compute.CalculateChampernowneString32(System.UInt32)">
+ <summary>
+ Compute Champernowne String with specified digits on 32-bit platform
+ </summary>
+ <param name="digits">Number of digits to compute</param>
+</member>
+<member name="M:Fire_API.ref.Compute.CalculateChampernowneString64(System.UInt64)">
+ <summary>
+ Compute Champernowne String with specified digits on 64-bit platform
+ </summary>
+ <param name="digits">Number of digits to compute</param>
 </member>
 <member name="T:Fire_API.ref.Requests">
  <summary>

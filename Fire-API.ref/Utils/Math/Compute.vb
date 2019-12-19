@@ -63,14 +63,4 @@ Public Class Compute
 
         Return "0." + Result
     End Function
-
-    ''' <summary>
-    ''' Compute Pi using Bailey–Borwein–Plouffe formula
-    ''' <para>https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula</para>
-    ''' </summary>
-    ''' <param name="digits">Amount of digits to compute (after "3.")</param>
-    ''' <returns>Pi to specified digits</returns>
-    Public Function ComputePi(digits As ULong) As String
-
-    End Function
 End Class
