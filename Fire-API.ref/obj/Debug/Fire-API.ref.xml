@@ -319,57 +319,57 @@ Fire-API.ref
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.AVOGADRO">
  <summary>
- Avogadro's constant (unit/mol).
+ Avogadro's constant (unit/mol)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.BOLTZMANN">
  <summary>
- Boltzmann constant (J/K).
+ Boltzmann constant (J/K)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.kB">
  <summary>
- Boltzmann constant (J/K).
+ Boltzmann constant (J/K)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.C">
  <summary>
- Light speed constant (m/s).
+ Light speed constant (m/s)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.LIGHT_SPEED">
  <summary>
- Light speed constant (m/s).
+ Light speed constant (m/s)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.EARTH_GRAVITATIONAL_FORCE">
  <summary>
- Gravitational force on Earth.
+ Gravitational force on Earth
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.ELEMENTARY_CHARGE">
  <summary>
- Elementary charge constant.
+ Elementary charge constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.FARADAY">
  <summary>
- Faraday's constant (C/mol).
+ Faraday's constant (C/mol)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.G">
  <summary>
- Gravitational constant (N × m² × kg-²).
+ Gravitational constant (N × m² × kg-²)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.GRAVITATIONAL_CONSTANT">
  <summary>
- Gravitational constant (N × m² × kg-²).
+ Gravitational constant (N × m² × kg-²)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.PERFECT_GASSES">
  <summary>
- Perfect gasses constant (J/(K/mol)).
+ Perfect gasses constant (J/(K/mol))
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.PLANCK">
@@ -539,7 +539,7 @@ Fire-API.ref
 </member>
 <member name="F:Fire_API.ref.Fire_API_ref.API_VERSION">
  <summary>
- Current version of your API.
+ Current version of your API
  </summary>
 </member>
 <member name="F:Fire_API.ref.Fire_API_ref.API_UPDATE_PAGE">

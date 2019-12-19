@@ -688,7 +688,7 @@
 Public Class Fire_API_ref
 
     ''' <summary>
-    ''' Current version of your API.
+    ''' Current version of your API
     ''' </summary>
     Public Const API_VERSION = "1.1"
     ''' <summary>

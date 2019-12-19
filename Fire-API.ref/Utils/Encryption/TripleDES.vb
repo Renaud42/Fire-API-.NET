@@ -27,7 +27,7 @@ Public NotInheritable Class TripleDES
 
         Dim csp     ' Variable used to store Crypto Service Provider type class
 
-        ' Computing hash with corresponding encryption algorithm
+        ' Computing hash with corresponding hashing algorithm
         Select Case hashingalgorithm
             Case hashingalgorithm.MD5
                 csp = New MD5CryptoServiceProvider
