@@ -125,8 +125,8 @@ Public Class API
     ''' Get status URL corresponding to a server name
     ''' </summary>
     ''' <param name="name"><seealso cref="ServerName"/> to get status URL</param>
-    ''' <returns></returns>
-    Private Function GetServerStatusURL(name As ServerName)
+    ''' <returns>Status server URL</returns>
+    Private Function GetServerStatusURL(name As ServerName) As String
         Select Case name
             Case ServerName.FIRE_SOFTWARES
                 Return STATUS_0

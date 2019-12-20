@@ -85,57 +85,57 @@ Fire-API.ref
 </member>
 <member name="F:Fire_API.ref.MathConstants.PI">
  <summary>
- π constant.
+ π constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.PI_100000">
  <summary>
- π constant.
+ π constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.E">
  <summary>
- Euler constant.
+ Euler constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.EULER">
  <summary>
- Euler constant.
+ Euler constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.E_10000">
  <summary>
- Euler constant.
+ Euler constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.CHAMPERNOWNE">
  <summary>
- Champernowne's constant.
+ Champernowne's constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.C10">
  <summary>
- Champernowne's constant.
+ Champernowne's constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.C10_100000">
  <summary>
- Champernowne's constant.
+ Champernowne's constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.GOLD_NUMBER">
  <summary>
- Gold number constant.
+ Gold number constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.GOD_NUMBER">
  <summary>
- Gold number constant.
+ Gold number constant
  </summary>
 </member>
 <member name="F:Fire_API.ref.MathConstants.GOLD_SECTION">
  <summary>
- Gold number constant.
+ Gold number constant
  </summary>
 </member>
 <member name="T:Fire_API.ref.MathConstants.PiDB">
@@ -182,19 +182,22 @@ Fire-API.ref
  <summary>
  Get π String with specified digits
  </summary>
- <param name="digits">Number of digits (max = 99999).</param>
+ <param name="digits">Number of digits (max = 99999)</param>
+ <returns>π String to specified digits</returns>
 </member>
 <member name="M:Fire_API.ref.MathConstants.GetEString(System.Int64)">
  <summary>
- Get e String with specified digits.
+ Get e String with specified digits
  </summary>
  <param name="digits">Number of digits (max = 9999).</param>
+ <returns>e String to specified digits</returns>
 </member>
 <member name="M:Fire_API.ref.MathConstants.GetC10String(System.Int64)">
  <summary>
- Get C10 String with specified digits.
+ Get C10 String with specified digits
  </summary>
- <param name="digits">Number of digits (max = 99999).</param>
+ <param name="digits">Number of digits (max = 99999)</param>
+ <returns>C10 String to specified digits</returns>
 </member>
 <member name="M:Fire_API.ref.MathConstants.GetPiFromDatabase(System.Int64,Fire_API.ref.MathConstants.PiDB,System.Boolean,System.Boolean)">
  <summary>
@@ -245,7 +248,7 @@ Fire-API.ref
  <param name="data">Data from website</param>
  <param name="offset">Offset where starts the constant</param>
  <param name="digits">Digits of constant</param>
- <returns></returns>
+ <returns>Extracted constant from document</returns>
 </member>
 <member name="T:Fire_API.ref.Messages">
  <summary>
