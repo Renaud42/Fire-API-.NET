@@ -68,7 +68,7 @@ Public Class ExtraFile
                     ' We edit the file with the decrypted text of the wrapper of the selected algorithm
                     My.Computer.FileSystem.WriteAllText(filePath, decryptedText, False, encoding)
                 ElseIf encType = EncryptionType.FILE_NAME Then
-                    Dim decryptedFileName As String = wrapper.DecryptData(filePath.Replace(",", "/").Split("\\").Last)
+                    Dim decryptedFileName As String = wrapper.DecryptData(filePath.Split("\\").Last.Replace(",", "/"))
 
                     ' We rename the file with the decrypted text of the wrapper of the selected algorithm
                     My.Computer.FileSystem.RenameFile(filePath, decryptedFileName)
