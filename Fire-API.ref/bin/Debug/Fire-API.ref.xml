@@ -310,6 +310,11 @@ Fire-API.ref
  Message shown when your Fire-API version is the lastest stable
  </summary>
 </member>
+<member name="F:Fire_API.ref.Messages.API_BETA">
+ <summary>
+ Message shown when a Fire-API Beta is used
+ </summary>
+</member>
 <member name="F:Fire_API.ref.Messages.API_UPDATE_AVAILABLE">
  <summary>
  Message shown when a Fire-API update is available
@@ -617,7 +622,7 @@ Fire-API.ref
  Get status URL corresponding to a server name
  </summary>
  <param name="name"><seealso cref="T:Fire_API.ref.Server.ServerName"/> to get status URL</param>
- <returns></returns>
+ <returns>Status server URL</returns>
 </member>
 <member name="T:Fire_API.ref.RC4">
  <summary>

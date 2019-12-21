@@ -61,6 +61,9 @@ Public Class Messages
     ' -------------------------------------------
     ' WARNINGS
     ' -------------------------------------------
+    ''' <summary>
+    ''' Message shown when a Fire-API Beta is used
+    ''' </summary>
     Public Const API_BETA = "Warning : you are using a beta / unstable build of Fire-API (%api-version%). If you don't know why you see this warning, go back to lastest stable version (%lastest-stable%) on %api-update-page%. Or else you're in the future of Fire-API 8)"
     ''' <summary>
     ''' Message shown when a Fire-API update is available

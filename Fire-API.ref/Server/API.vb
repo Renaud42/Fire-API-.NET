@@ -99,10 +99,10 @@ Public Class API
                             Return response("channels")
                         Case ServerInfoType.DISCORD_ID
                             Return response("id")
-                        Case ServerInfoType.SERVER_NAME
-                            Return response("name")
                         Case ServerInfoType.MEMBERS
                             Return response("members")
+                        Case ServerInfoType.SERVER_NAME
+                            Return response("name")
                     End Select
                 Case ServerName.FRAMEWORK_STATUS, ServerName.API_STATUS
                     Select Case infotype
