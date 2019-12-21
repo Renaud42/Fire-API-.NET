@@ -352,7 +352,7 @@ Fire-API.ref
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.EARTH_GRAVITATIONAL_FORCE">
  <summary>
- Gravitational force on Earth
+ Gravitational force on Earth (N/kg)
  </summary>
 </member>
 <member name="F:Fire_API.ref.PhysChemConstants.ELEMENTARY_CHARGE">
@@ -616,6 +616,7 @@ Fire-API.ref
  </summary>
  <param name="name">The server that you want information about</param>
  <param name="infotype">Type of information needed</param>
+ <returns>Information needed</returns>
 </member>
 <member name="M:Fire_API.ref.API.GetServerStatusURL(Fire_API.ref.Server.ServerName)">
  <summary>

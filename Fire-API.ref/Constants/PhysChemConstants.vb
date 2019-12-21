@@ -16,7 +16,7 @@ Public Class PhysChemConstants
     ''' </summary>
     Public Const C = 2.99792458 * 10 ^ 8, LIGHT_SPEED = 2.99792458 * 10 ^ 8
     ''' <summary>
-    ''' Gravitational force on Earth
+    ''' Gravitational force on Earth (N/kg)
     ''' </summary>
     Public Const EARTH_GRAVITATIONAL_FORCE = 9.80665
     ''' <summary>

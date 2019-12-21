@@ -31,6 +31,7 @@ Public Class API
     ''' </summary>
     ''' <param name="name">The server that you want information about</param>
     ''' <param name="infotype">Type of information needed</param>
+    ''' <returns>Information needed</returns>
     Public Function GetServerInformation(name As ServerName, infotype As ServerInfoType, Optional refreshfile As Boolean = True)
         ' Getting required content on corresponding URL
         If My.Computer.Network.IsAvailable Or (Not My.Computer.Network.IsAvailable And Not refreshfile And cachedcontent <> String.Empty) Then
