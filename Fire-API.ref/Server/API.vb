@@ -73,6 +73,8 @@ Public Class API
                             Return response("status")("units")("ram")
                         Case ServerInfoType.RAM_USED
                             Return response("status")("ram")("used")
+                        Case Else
+                            Throw New WrongServerInfoTypeException(name, infotype)
                     End Select
                 Case ServerName.MUMBLE
                     Select Case infotype
@@ -80,6 +82,8 @@ Public Class API
                             Return response("status")("online")
                         Case ServerInfoType.PLAYER_COUNT
                             Return response("status")("players")("online")
+                        Case Else
+                            Throw New WrongServerInfoTypeException(name, infotype)
                     End Select
                 Case ServerName.MUMBLE_CVP
                     Select Case infotype
@@ -93,6 +97,8 @@ Public Class API
                             Return response("name")
                         Case ServerInfoType.UPTIME
                             Return response("uptime")
+                        Case Else
+                            Throw New WrongServerInfoTypeException(name, infotype)
                     End Select
                 Case ServerName.DISCORD
                     Select Case infotype
@@ -104,6 +110,8 @@ Public Class API
                             Return response("members")
                         Case ServerInfoType.SERVER_NAME
                             Return response("name")
+                        Case Else
+                            Throw New WrongServerInfoTypeException(name, infotype)
                     End Select
                 Case ServerName.FRAMEWORK_STATUS, ServerName.API_STATUS
                     Select Case infotype
@@ -111,11 +119,13 @@ Public Class API
                             Return response("informations")("online")
                         Case ServerInfoType.VERSION
                             Return response("informations")("version")
+                        Case Else
+                            Throw New WrongServerInfoTypeException(name, infotype)
                     End Select
             End Select
 
             ' If nothing returned, there's an error of server info type required
-            Throw New WrongServerInfoTypeException(name, infotype)
+            Throw New UnknownServerException
         Else
             ' If there is no network available, there's a network unavailable exception
             Throw New NetworkUnavailableException
